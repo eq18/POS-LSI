@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>validasi di db - incase you miss it</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>ba498aa9-193a-412c-b1e6-bfe9832425d4</testCaseGuid>
+</TestCaseEntity>

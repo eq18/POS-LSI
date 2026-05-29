@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC 04 - Get PLU from Excel - Multiple PLU - Copy</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>f4c8526b-e5d4-452e-bfec-368ddf4d5715</testCaseGuid>
+</TestCaseEntity>

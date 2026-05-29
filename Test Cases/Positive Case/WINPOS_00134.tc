@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>- cek diskon&#xd;
+- validasi diskon di dalam button diskon //row ke 4&#xd;
+- jangan berubah lg plisss</description>
+   <name>WINPOS_00134</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>09aa2a52-660e-4d9c-8f22-67c5ae7de91b</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>6bd22191-5b7b-4588-ad11-89c0995f8d6d</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>06f686c5-d07e-4ec4-97f4-fdfeb37bbdf1</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>6bd22191-5b7b-4588-ad11-89c0995f8d6d</id>
+      <masked>false</masked>
+      <name>qty</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>06f686c5-d07e-4ec4-97f4-fdfeb37bbdf1</id>
+      <masked>false</masked>
+      <name>plu</name>
+   </variable>
+</TestCaseEntity>

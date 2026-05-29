@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFileEntity>
+   <description></description>
+   <name>Generate QR</name>
+   <tag></tag>
+   <connectionProperties/>
+   <containsHeaders>true</containsHeaders>
+   <csvSeperator></csvSeperator>
+   <dataFileGUID>a9105fe5-69a4-489c-a58a-aff9f67fff23</dataFileGUID>
+   <dataSourceUrl>jdbc:postgresql://34.128.76.46:5432/lsi-pos-payment</dataSourceUrl>
+   <driver>DBData</driver>
+   <driverClassName></driverClassName>
+   <isInternalPath>false</isInternalPath>
+   <password>bHNpaDJoZGV2VXNlckRi</password>
+   <query>SELECT coalesce((response_object::JSON ) ->>'qrContent','') as qrString&#xd;
+FROM public.transaction_logs where &quot;action&quot; = 'Generate QR BNI-SNAP' &#xd;
+order by created_at desc limit 1;</query>
+   <secureUserAccount>true</secureUserAccount>
+   <sheetName></sheetName>
+   <user>lsi-pos-payment</user>
+   <usingGlobalDBSetting>false</usingGlobalDBSetting>
+</DataFileEntity>

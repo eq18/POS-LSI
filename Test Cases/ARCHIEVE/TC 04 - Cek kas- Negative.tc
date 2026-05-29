@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC 04 - Cek kas- Negative</name>
+   <tag>jira-integration</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>f1f4175a-465f-4739-b12b-bf6304c72b88</testCaseGuid>
+</TestCaseEntity>

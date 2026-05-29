@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>- Promo Digital (using member)&#xd;
+- has 1 transaction (2 plu)&#xd;
+- validation in DB</description>
+   <name>WINPOS_00155</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>b4994cc7-1bcc-4b78-92b2-f0c6daafe67f</testCaseGuid>
+</TestCaseEntity>

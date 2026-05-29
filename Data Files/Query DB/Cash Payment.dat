@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFileEntity>
+   <description></description>
+   <name>Cash Payment</name>
+   <tag></tag>
+   <connectionProperties/>
+   <containsHeaders>true</containsHeaders>
+   <csvSeperator></csvSeperator>
+   <dataFileGUID>c259ec21-0287-40da-aad1-df3e4d196e9e</dataFileGUID>
+   <dataSourceUrl>jdbc:sqlserver://localhost:49943;databaseName=STORE;encrypt=false;</dataSourceUrl>
+   <driver>DBData</driver>
+   <driverClassName></driverClassName>
+   <isInternalPath>false</isInternalPath>
+   <password>THNpMTIzNDU2Nw==</password>
+   <query>use store&#xd;
+select b.* &#xd;
+from POSTransaction_header a &#xd;
+inner join POSTransactionPayment b on b.postransactionheader_ID = a.postransactionheader_ID&#xd;
+where b.postransactionpayment_starttime>'2026-02-02 09:08:33.017'&#xd;
+order by b.postransactionpayment_starttime desc</query>
+   <secureUserAccount>true</secureUserAccount>
+   <sheetName></sheetName>
+   <user>SA</user>
+   <usingGlobalDBSetting>false</usingGlobalDBSetting>
+</DataFileEntity>

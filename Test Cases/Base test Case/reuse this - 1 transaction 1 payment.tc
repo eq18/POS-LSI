@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>- Promo Digital (using member)&#xd;
+- has 1 transaction (2 plu)&#xd;
+- validation in DB</description>
+   <name>reuse this - 1 transaction 1 payment</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>c75247de-fe10-435e-90c3-59373e32c720</testCaseGuid>
+</TestCaseEntity>

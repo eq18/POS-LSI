@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Summary: Story A&#xd;
+Description: </description>
+   <name>TC 03 - Cek kas</name>
+   <tag>jira-integration</tag>
+   <integratedEntity>
+      <productName>JIRA</productName>
+      <properties>
+         <entry>
+            <key>integratedValue</key>
+            <value>{&quot;jiraIssue&quot;:{&quot;fields&quot;:{&quot;customFields&quot;:{&quot;customfield_10051&quot;:[],&quot;customfield_10030&quot;:[],&quot;customfield_10028&quot;:{&quot;value&quot;:&quot;3.0&quot;},&quot;customfield_10020&quot;:[{&quot;id&quot;:28,&quot;name&quot;:&quot;DB Sprint 1&quot;,&quot;state&quot;:&quot;active&quot;,&quot;boardId&quot;:68,&quot;goal&quot;:&quot;&quot;,&quot;startDate&quot;:&quot;2025-02-03T13:57:10.049Z&quot;,&quot;endDate&quot;:&quot;2025-02-17T13:57:07.000Z&quot;}],&quot;customfield_10019&quot;:&quot;0|i0041n:&quot;,&quot;customfield_10014&quot;:&quot;DB-5&quot;,&quot;customfield_10000&quot;:&quot;{}&quot;,&quot;customfield_10002&quot;:[]},&quot;status&quot;:{&quot;id&quot;:10116,&quot;description&quot;:&quot;&quot;,&quot;iconUrl&quot;:&quot;https://chrishanditya.atlassian.net/images/icons/statuses/generic.png&quot;,&quot;statusCategory&quot;:{&quot;id&quot;:4,&quot;key&quot;:&quot;indeterminate&quot;,&quot;colorName&quot;:&quot;yellow&quot;,&quot;self&quot;:&quot;https://chrishanditya.atlassian.net/rest/api/2/statuscategory/4&quot;,&quot;name&quot;:&quot;In Progress&quot;},&quot;self&quot;:&quot;https://chrishanditya.atlassian.net/rest/api/2/status/10116&quot;,&quot;name&quot;:&quot;Testing&quot;},&quot;project&quot;:{&quot;self&quot;:&quot;https://chrishanditya.atlassian.net/rest/api/2/project/10077&quot;,&quot;key&quot;:&quot;DB&quot;,&quot;id&quot;:10077,&quot;name&quot;:&quot;Demo BJB&quot;},&quot;components&quot;:[],&quot;summary&quot;:&quot;Story A&quot;,&quot;reporter&quot;:{&quot;active&quot;:true,&quot;displayName&quot;:&quot;chrishanditya wisnu nirwandha&quot;,&quot;accountId&quot;:&quot;5d31a090fe0a0d0c857abeca&quot;,&quot;self&quot;:&quot;https://chrishanditya.atlassian.net/rest/api/2/user?accountId\u003d5d31a090fe0a0d0c857abeca&quot;},&quot;priority&quot;:{&quot;id&quot;:3,&quot;self&quot;:&quot;https://chrishanditya.atlassian.net/rest/api/2/priority/3&quot;,&quot;name&quot;:&quot;Medium&quot;},&quot;votes&quot;:{&quot;self&quot;:&quot;https://chrishanditya.atlassian.net/rest/api/2/issue/DB-1/votes&quot;,&quot;votes&quot;:0,&quot;hasVoted&quot;:false},&quot;fixVersions&quot;:[],&quot;subtasks&quot;:[{}],&quot;labels&quot;:[]},&quot;self&quot;:&quot;https://chrishanditya.atlassian.net/rest/api/latest/issue/10751&quot;,&quot;key&quot;:&quot;DB-1&quot;,&quot;id&quot;:10751}}</value>
+         </entry>
+      </properties>
+      <type>TESTCASE</type>
+   </integratedEntity>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>087c9984-f17c-4b0b-9c57-7c0b5fac1bd2</testCaseGuid>
+</TestCaseEntity>

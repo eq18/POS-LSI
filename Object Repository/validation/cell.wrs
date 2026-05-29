@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WindowsElementEntity>
+   <description></description>
+   <name>cell</name>
+   <tag></tag>
+   <locator>//Edit[@Name='${colName} Row ${row}']</locator>
+   <locatorStrategy>XPATH</locatorStrategy>
+</WindowsElementEntity>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>ambil data di db untuk qrString - bni</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>79640a35-0c31-4446-b84d-40c1edac64aa</testCaseGuid>
+</TestCaseEntity>

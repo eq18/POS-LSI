@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WindowsElementEntity>
+   <description></description>
+   <name>row_validation</name>
+   <tag></tag>
+   <locator>//*[@Name='EDC Row ${row}']</locator>
+   <locatorStrategy>XPATH</locatorStrategy>
+   <properties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>row</name>
+      <type>Main</type>
+      <value>0</value>
+      <webElementGuid>78bb2401-c238-4ddd-950f-b2518c9d049a</webElementGuid>
+   </properties>
+</WindowsElementEntity>

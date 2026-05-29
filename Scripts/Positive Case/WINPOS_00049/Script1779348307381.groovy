@@ -1,0 +1,73 @@
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+import com.kms.katalon.core.model.FailureHandling as FailureHandling
+import com.kms.katalon.core.testcase.TestCase as TestCase
+import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
+import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import internal.GlobalVariable as GlobalVariable
+import org.openqa.selenium.Keys as Keys
+
+Windows.startApplication(GlobalVariable.appPath)
+
+Windows.doubleClick(findWindowsObject('new login/btn_closeX'))
+
+Windows.doubleClick(findWindowsObject('Object Repository/new login/txt_userID'))
+
+Windows.setText(findWindowsObject('Object Repository/new login/txt_userID'), '100')
+
+Windows.sendKeys(findWindowsObject('new login/txt_userID'), Keys.chord(Keys.TAB))
+
+Windows.setText(findWindowsObject('Object Repository/new login/txt_password'), 'LSI123')
+
+Windows.click(findWindowsObject('Object Repository/new login/btn_masuk'))
+
+Windows.click(findWindowsObject('Object Repository/new login/btn_close2'))
+
+not_run: Windows.click(findWindowsObject('ss/Button'))
+
+Windows.switchToWindowTitle('Main Menu')
+
+'Klik Sign Off Menu'
+Windows.click(findWindowsObject('Object Repository/Sign Off/btn_signOff'))
+
+'Input User yang sedang beroperasi'
+Windows.setText(findWindowsObject('Object Repository/Sign Off/txt_user'), GlobalVariable.userId)
+
+'Input Station'
+Windows.setText(findWindowsObject('Object Repository/Sign Off/txt_station'), '02')
+
+'Klik tombol verifikasi'
+Windows.click(findWindowsObject('Object Repository/Sign Off/btn_verifikasi'))
+
+Windows.click(findWindowsObject('Object Repository/Sign Off/btn_verifikasiYA'))
+
+Windows.verifyElementPresent(findWindowsObject('Object Repository/Sign Off/txt_nominalAktual'), 100)
+
+Windows.setText(findWindowsObject('Object Repository/Sign Off/txt_nominalAktual'), '600,000')
+
+Windows.click(findWindowsObject('Object Repository/Sign Off/btn_kirim'))
+
+Windows.click(findWindowsObject('Object Repository/Sign Off/btn_kirimYA'))
+
+Windows.click(findWindowsObject('Object Repository/Sign Off/btn_YA'))
+
+Windows.click(findWindowsObject('Object Repository/Sign Off/btn_closePrinter'))
+
+Windows.verifyElementPresent(findWindowsObject('Object Repository/Sign Off/txt_berhasil'), 100)
+
+Windows.click(findWindowsObject('Object Repository/Sign Off/btn_tutup'))
+
+Windows.switchToWindowTitle('Login')
+
+Windows.click(findWindowsObject('Object Repository/new login/btn_closeApplication'))
+

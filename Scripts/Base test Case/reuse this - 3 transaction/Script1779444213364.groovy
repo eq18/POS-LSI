@@ -1,0 +1,876 @@
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+import com.kms.katalon.core.model.FailureHandling as FailureHandling
+import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testdata.TestDataFactory as TestDataFactory
+import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
+import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
+import org.openqa.selenium.Keys as Keys
+
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+import com.kms.katalon.core.model.FailureHandling as FailureHandling
+import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testdata.TestDataFactory as TestDataFactory
+import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
+import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import org.openqa.selenium.Keys as Keys
+
+
+/*GUNAKAN TC INI JIKA:
+ 1. VALIDASI DISKON DI HALAMAN PEMBAYARAN
+ 2. ADA 3 PEMBAYARAN
+ */
+
+'Functional clean number'
+def cleanNumber(String value) {
+
+	return value.replaceAll('[^0-9-]', '').toLong()
+}
+
+'Login'
+Windows.callTestCase(
+		findTestCase(
+				'Additional Cases/Login'
+		),
+		[:],
+		FailureHandling.STOP_ON_FAILURE
+)
+
+Windows.takeScreenshot()
+
+promo = 'Promo Beli 4 Lebih Hemat'
+
+Windows.comment(
+		'Promo Package = ' + promo
+)
+
+CustomKeywords.'custom.WindowUtils.switchToWindowTitle'(
+		'Main Menu'
+)
+
+'Klik tombol transaksi kasir'
+Windows.click(
+		findWindowsObject(
+				'Transaksi Kasir/btn_transaksiKasir'
+		)
+)
+
+Windows.delay(2)
+
+Windows.takeScreenshot()
+
+CustomKeywords.'custom.WindowUtils.switchToWindowTitle'(
+		'Transaksi Kasir'
+)
+
+Windows.takeScreenshot()
+
+Windows.delay(3)
+
+'Load Excel'
+TestData td =
+		TestDataFactory.findTestData(
+				'Package Beli 4 Lebih Hemat'
+		)
+
+'Looping transaksi'
+for (int row = 1; row <= 1; row++) {
+
+	String plu =
+			td.getValue(
+					'plu',
+					row
+			)
+
+	String qty =
+			td.getValue(
+					'qty',
+					row
+			)
+
+	KeywordUtil.logInfo(
+			'INPUT PLU = ' + plu
+	)
+
+	KeywordUtil.logInfo(
+			'INPUT QTY = ' + qty
+	)
+
+	'Input PLU'
+	Windows.click(
+			findWindowsObject(
+					'Transaksi Kasir/txt_PLU'
+			)
+	)
+
+	Windows.sendKeys(
+			findWindowsObject(
+					'Transaksi Kasir/txt_PLU'
+			),
+			plu
+	)
+
+	Windows.sendKeys(
+			findWindowsObject(
+					'Transaksi Kasir/txt_PLU'
+			),
+			Keys.chord(Keys.ENTER)
+	)
+
+	Windows.delay(2)
+
+	'Input Quantity'
+	Windows.setText(
+			findWindowsObject(
+					'Transaksi Kasir/txt_PLU'
+			),
+			qty
+	)
+
+	Windows.sendKeys(
+			findWindowsObject(
+					'Transaksi Kasir/txt_PLU'
+			),
+			Keys.chord(Keys.ENTER)
+	)
+
+	Windows.delay(3)
+}
+
+Windows.takeScreenshot()
+
+'Payment Page'
+Windows.click(
+		findWindowsObject(
+				'ss/btn_enter'
+		)
+)
+
+Windows.delay(3)
+
+Windows.takeScreenshot()
+
+'Validasi pembayaran ke - 1'
+String totalPembayaranStr1 =
+		Windows.getText(
+				findWindowsObject(
+						'ss/txt_totalYangHarusDibayar'
+				)
+		)
+
+long totalPembayaranAct1 =
+		cleanNumber(
+				totalPembayaranStr1
+		)
+
+'Expected Payment 1'
+long grandTotalExpected1 =
+		td.getValue(
+				'expected',
+				1
+		).toLong()
+
+KeywordUtil.logInfo(
+		'EXPECTED PAYMENT 1 = ' +
+		grandTotalExpected1
+)
+
+KeywordUtil.logInfo(
+		'ACTUAL PAYMENT 1 = ' +
+		totalPembayaranAct1
+)
+
+'Validasi'
+if (grandTotalExpected1 == totalPembayaranAct1) {
+
+	KeywordUtil.markPassed(
+			'✅ PAYMENT 1 SESUAI\n' +
+			'EXPECTED = ' + grandTotalExpected1 + '\n' +
+			'ACTUAL = ' + totalPembayaranAct1
+	)
+
+} else {
+
+	KeywordUtil.markFailed(
+			'❌ PAYMENT 1 TIDAK SESUAI\n' +
+			'EXPECTED = ' + grandTotalExpected1 + '\n' +
+			'ACTUAL = ' + totalPembayaranAct1
+	)
+}
+
+Windows.takeScreenshot()
+
+"Input payment ke 1"
+int nilai1 =
+		Integer.parseInt(
+				totalPembayaranStr1.replace(',', '')
+		)
+
+int totalAmount1 =
+		Math.ceil(
+				nilai1 / 100.0
+		) * 100
+
+String totalBelanja1 =
+		totalAmount1.toString()
+
+Windows.setText(
+		findWindowsObject(
+				'Transaksi Kasir/txt_tunai'
+		),
+		totalBelanja1
+)
+
+Windows.delay(2)
+
+Windows.takeScreenshot()
+
+'Final payment ke 1'
+Windows.click(
+		findWindowsObject(
+				'Transaksi Kasir/btn_enter'
+		)
+)
+
+Windows.delay(2)
+
+Windows.click(
+		findWindowsObject(
+				'Transaksi Kasir/btn_enter'
+		)
+)
+
+Windows.delay(3)
+
+Windows.takeScreenshot()
+
+Windows.verifyElementPresent(findWindowsObject('ss/txt_pembayaranBerhasil'), 1000)
+
+String pembayaranBerhasil1 =
+		Windows.getText(
+				findWindowsObject(
+						'ss/txt_pembayaranBerhasil'
+				)
+		)
+
+if (pembayaranBerhasil1.length() > 0) {
+
+	KeywordUtil.markPassed(
+			'✅ PAYMENT 1 BERHASIL'
+	)
+	
+	def td2 = findTestData('Query DB/Cash Payment')
+	
+	def td1 = findTestData('Query DB/Validation')
+	
+	String expectedResult = td2.getValue('postransactionpayment_Value', 1)
+	
+	String expectedResult_fhbkas = td1.getValue('FHBKAS', 1)
+	
+	String startTime = td2.getValue('postransactionpayment_StartTime', 1)
+	
+	String endTime = td2.getValue('postransactionpayment_EndTime', 1)
+	
+	Windows.comment('Start Time: ' + startTime)
+	
+	Windows.comment('End Time  : ' + endTime)
+	
+	// ===== Clean data (remove comma & trim) =====
+	String expectedStr = expectedResult.toString().trim().replace(',', '')
+	
+	String expectedStr_fhbkas = expectedResult_fhbkas.toString().trim().replace(',', '')
+	
+	String actualStr = totalAmount1.toString().trim().replace(',', '')
+	
+	// ===== Log raw vs clean =====
+	Windows.comment('Expected raw (Payment Value): ' + expectedResult)
+	
+	Windows.comment('Expected raw (FHBKAS)       : ' + expectedResult_fhbkas)
+	
+	Windows.comment('Actual raw (total)          : ' + totalAmount1)
+	
+	Windows.comment('Expected clean (Payment Value): ' + expectedStr)
+	
+	Windows.comment('Expected clean (FHBKAS)       : ' + expectedStr_fhbkas)
+	
+	Windows.comment('Actual clean (total)          : ' + actualStr)
+	
+	// ===== Convert to BigDecimal =====
+	BigDecimal expected = new BigDecimal(expectedStr)
+	
+	BigDecimal expected_fhbkas = new BigDecimal(expectedStr_fhbkas)
+	
+	BigDecimal actual = new BigDecimal(actualStr)
+	
+	// ===== Validation 1: Payment Value vs Total =====
+	if (expected.compareTo(actual) == 0) {
+		Windows.comment("✅ Payment Value sesuai | expected=$expected actual=$actual")
+	} else {
+		Windows.comment("❌ Payment Value tidak sesuai | expected=$expected actual=$actual")
+	}
+	
+	// ===== Validation 2: FHBKAS vs Total (optional) =====
+	if (expected_fhbkas.compareTo(actual) == 0) {
+		Windows.comment("✅ FHBKAS sesuai | expected=$expected_fhbkas actual=$actual")
+	} else {
+		Windows.comment("❌ FHBKAS tidak sesuai | expected=$expected_fhbkas actual=$actual")
+	}
+	
+	
+
+	Windows.click(
+			findWindowsObject(
+					'ss/btn_tutup'
+			)
+	)
+
+	Windows.delay(2)
+}
+
+'Transaksi ke 2'
+for (int row = 2; row <= 3; row++) {
+
+	String plu =
+			td.getValue(
+					'plu',
+					row
+			)
+
+	String qty =
+			td.getValue(
+					'qty',
+					row
+			)
+
+	KeywordUtil.logInfo(
+			'INPUT PLU = ' + plu
+	)
+
+	KeywordUtil.logInfo(
+			'INPUT QTY = ' + qty
+	)
+
+	// ==============================================
+	// INPUT PLU
+	// ==============================================
+	Windows.click(
+			findWindowsObject(
+					'Transaksi Kasir/txt_PLU'
+			)
+	)
+
+	Windows.sendKeys(
+			findWindowsObject(
+					'Transaksi Kasir/txt_PLU'
+			),
+			plu
+	)
+
+	Windows.sendKeys(
+			findWindowsObject(
+					'Transaksi Kasir/txt_PLU'
+			),
+			Keys.chord(Keys.ENTER)
+	)
+
+	Windows.delay(2)
+
+	// ==============================================
+	// INPUT QTY
+	// ==============================================
+	Windows.setText(
+			findWindowsObject(
+					'Transaksi Kasir/txt_PLU'
+			),
+			qty
+	)
+
+	Windows.sendKeys(
+			findWindowsObject(
+					'Transaksi Kasir/txt_PLU'
+			),
+			Keys.chord(Keys.ENTER)
+	)
+
+	Windows.delay(3)
+}
+
+Windows.takeScreenshot()
+
+'Payment page 2'
+Windows.click(
+		findWindowsObject(
+				'ss/btn_enter'
+		)
+)
+
+Windows.delay(3)
+
+Windows.takeScreenshot()
+
+'Validasi total pembayaran ke 2'
+String totalPembayaranStr2 =
+		Windows.getText(
+				findWindowsObject(
+						'ss/txt_totalYangHarusDibayar'
+				)
+		)
+
+long totalPembayaranAct2 =
+		cleanNumber(
+				totalPembayaranStr2
+		)
+
+'Expected Payment ke 2'
+long expected2 =
+		td.getValue(
+				'expected',
+				2
+		).toLong()
+
+long expected3 =
+		td.getValue(
+				'expected',
+				3
+		).toLong()
+
+long grandTotalExpected2 =
+		expected2 + expected3
+
+KeywordUtil.logInfo(
+		'EXPECTED PAYMENT 2 = ' +
+		grandTotalExpected2
+)
+
+KeywordUtil.logInfo(
+		'ACTUAL PAYMENT 2 = ' +
+		totalPembayaranAct2
+)
+
+'Validation'
+if (grandTotalExpected2 == totalPembayaranAct2) {
+
+	KeywordUtil.markPassed(
+			'✅ PAYMENT 2 SESUAI\n' +
+			'EXPECTED = ' + grandTotalExpected2 + '\n' +
+			'ACTUAL = ' + totalPembayaranAct2
+	)
+
+} else {
+
+	KeywordUtil.markFailed(
+			'❌ PAYMENT 2 TIDAK SESUAI\n' +
+			'EXPECTED = ' + grandTotalExpected2 + '\n' +
+			'ACTUAL = ' + totalPembayaranAct2
+	)
+}
+
+Windows.takeScreenshot()
+
+'Input pembayaran ke 2'
+int nilai2 =
+		Integer.parseInt(
+				totalPembayaranStr2.replace(',', '')
+		)
+
+int totalAmount2 =
+		Math.ceil(
+				nilai2 / 100.0
+		) * 100
+
+String totalBelanja2 =
+		totalAmount2.toString()
+
+Windows.setText(
+		findWindowsObject(
+				'Transaksi Kasir/txt_tunai'
+		),
+		totalBelanja2
+)
+
+Windows.delay(2)
+
+Windows.takeScreenshot()
+
+'Final payment ke 2'
+Windows.click(
+		findWindowsObject(
+				'Transaksi Kasir/btn_enter'
+		)
+)
+
+Windows.delay(2)
+
+Windows.click(
+		findWindowsObject(
+				'Transaksi Kasir/btn_enter'
+		)
+)
+
+Windows.delay(3)
+
+Windows.takeScreenshot()
+
+
+Windows.verifyElementPresent(findWindowsObject('ss/txt_pembayaranBerhasil'), 1000)
+String pembayaranBerhasil2 =
+		Windows.getText(
+				findWindowsObject(
+						'ss/txt_pembayaranBerhasil'
+				)
+		)
+
+if (pembayaranBerhasil2.length() > 0) {
+
+	KeywordUtil.markPassed(
+			'✅ PAYMENT 2 BERHASIL'
+	)
+
+	def td2 = findTestData('Query DB/Cash Payment')
+	
+	def td1 = findTestData('Query DB/Validation')
+	
+	String expectedResult = td2.getValue('postransactionpayment_Value', 1)
+	
+	String expectedResult_fhbkas = td1.getValue('FHBKAS', 1)
+	
+	String startTime = td2.getValue('postransactionpayment_StartTime', 1)
+	
+	String endTime = td2.getValue('postransactionpayment_EndTime', 1)
+	
+	Windows.comment('Start Time: ' + startTime)
+	
+	Windows.comment('End Time  : ' + endTime)
+	
+	// ===== Clean data (remove comma & trim) =====
+	String expectedStr = expectedResult.toString().trim().replace(',', '')
+	
+	String expectedStr_fhbkas = expectedResult_fhbkas.toString().trim().replace(',', '')
+	
+	String actualStr = totalAmount2.toString().trim().replace(',', '')
+	
+	// ===== Log raw vs clean =====
+	Windows.comment('Expected raw (Payment Value): ' + expectedResult)
+	
+	Windows.comment('Expected raw (FHBKAS)       : ' + expectedResult_fhbkas)
+	
+	Windows.comment('Actual raw (total)          : ' + totalAmount2)
+	
+	Windows.comment('Expected clean (Payment Value): ' + expectedStr)
+	
+	Windows.comment('Expected clean (FHBKAS)       : ' + expectedStr_fhbkas)
+	
+	Windows.comment('Actual clean (total)          : ' + actualStr)
+	
+	// ===== Convert to BigDecimal =====
+	BigDecimal expected = new BigDecimal(expectedStr)
+	
+	BigDecimal expected_fhbkas = new BigDecimal(expectedStr_fhbkas)
+	
+	BigDecimal actual = new BigDecimal(actualStr)
+	
+	// ===== Validation 1: Payment Value vs Total =====
+	if (expected.compareTo(actual) == 0) {
+		Windows.comment("✅ Payment Value sesuai | expected=$expected actual=$actual")
+	} else {
+		Windows.comment("❌ Payment Value tidak sesuai | expected=$expected actual=$actual")
+	}
+	
+	// ===== Validation 2: FHBKAS vs Total (optional) =====
+	if (expected_fhbkas.compareTo(actual) == 0) {
+		Windows.comment("✅ FHBKAS sesuai | expected=$expected_fhbkas actual=$actual")
+	} else {
+		Windows.comment("❌ FHBKAS tidak sesuai | expected=$expected_fhbkas actual=$actual")
+	}
+	
+	
+	
+	
+	Windows.click(
+			findWindowsObject(
+					'ss/btn_tutup'
+			)
+	)
+
+	Windows.delay(2)
+}
+
+'Transaksi ke 3'
+for (int row = 4; row <= 5; row++) {
+
+	String plu =
+			td.getValue(
+					'plu',
+					row
+			)
+
+	String qty =
+			td.getValue(
+					'qty',
+					row
+			)
+
+	KeywordUtil.logInfo(
+			'INPUT PLU = ' + plu
+	)
+
+	KeywordUtil.logInfo(
+			'INPUT QTY = ' + qty
+	)
+
+	'Input PLU'
+	Windows.click(
+			findWindowsObject(
+					'Transaksi Kasir/txt_PLU'
+			)
+	)
+
+	Windows.sendKeys(
+			findWindowsObject(
+					'Transaksi Kasir/txt_PLU'
+			),
+			plu
+	)
+
+	Windows.sendKeys(
+			findWindowsObject(
+					'Transaksi Kasir/txt_PLU'
+			),
+			Keys.chord(Keys.ENTER)
+	)
+
+	Windows.delay(2)
+
+	'Input Quantity'
+	Windows.setText(
+			findWindowsObject(
+					'Transaksi Kasir/txt_PLU'
+			),
+			qty
+	)
+
+	Windows.sendKeys(
+			findWindowsObject(
+					'Transaksi Kasir/txt_PLU'
+			),
+			Keys.chord(Keys.ENTER)
+	)
+
+	Windows.delay(3)
+}
+
+Windows.takeScreenshot()
+
+'Halaman Payment ke 3'
+Windows.click(
+		findWindowsObject(
+				'ss/btn_enter'
+		)
+)
+
+Windows.delay(3)
+
+Windows.takeScreenshot()
+
+'Validasi pembayaran ke 3'
+String totalPembayaranStr3 =
+		Windows.getText(
+				findWindowsObject(
+						'ss/txt_totalYangHarusDibayar'
+				)
+		)
+
+long totalPembayaranAct3 =
+		cleanNumber(
+				totalPembayaranStr3
+		)
+
+'Expected payment ke 3'
+// row 4 + row 5
+// ======================================================
+long expected4 =
+		td.getValue(
+				'expected',
+				4
+		).toLong()
+
+long expected5 =
+		td.getValue(
+				'expected',
+				5
+		).toLong()
+
+long grandTotalExpected3 =
+		expected4 + expected5
+
+KeywordUtil.logInfo(
+		'EXPECTED PAYMENT 3 = ' +
+		grandTotalExpected3
+)
+
+KeywordUtil.logInfo(
+		'ACTUAL PAYMENT 3 = ' +
+		totalPembayaranAct3
+)
+
+'Validation'
+if (grandTotalExpected3 == totalPembayaranAct3) {
+
+	KeywordUtil.markPassed(
+			'✅ PAYMENT 3 SESUAI\n' +
+			'EXPECTED = ' + grandTotalExpected3 + '\n' +
+			'ACTUAL = ' + totalPembayaranAct3
+	)
+
+} else {
+
+	KeywordUtil.markFailed(
+			'❌ PAYMENT 3 TIDAK SESUAI\n' +
+			'EXPECTED = ' + grandTotalExpected3 + '\n' +
+			'ACTUAL = ' + totalPembayaranAct3
+	)
+}
+
+Windows.takeScreenshot()
+
+'Input pembayaran ke 3'
+int nilai3 =
+		Integer.parseInt(
+				totalPembayaranStr3.replace(',', '')
+		)
+
+int totalAmount3 =
+		Math.ceil(
+				nilai3 / 100.0
+		) * 100
+
+String totalBelanja3 =
+		totalAmount3.toString()
+
+Windows.setText(
+		findWindowsObject(
+				'Transaksi Kasir/txt_tunai'
+		),
+		totalBelanja3
+)
+
+Windows.delay(2)
+
+Windows.takeScreenshot()
+
+'Final payment ke 3'
+Windows.click(
+		findWindowsObject(
+				'Transaksi Kasir/btn_enter'
+		)
+)
+
+Windows.delay(2)
+
+Windows.click(
+		findWindowsObject(
+				'Transaksi Kasir/btn_enter'
+		)
+)
+
+Windows.delay(3)
+
+Windows.takeScreenshot()
+
+Windows.verifyElementPresent(findWindowsObject('ss/txt_pembayaranBerhasil'), 1000)
+String pembayaranBerhasil3 =
+		Windows.getText(
+				findWindowsObject(
+						'ss/txt_pembayaranBerhasil'
+				)
+		)
+
+if (pembayaranBerhasil3.length() > 0) {
+
+	KeywordUtil.markPassed(
+			'✅ PAYMENT 3 BERHASIL'
+	)
+
+	def td2 = findTestData('Query DB/Cash Payment')
+	
+	def td1 = findTestData('Query DB/Validation')
+	
+	String expectedResult = td2.getValue('postransactionpayment_Value', 1)
+	
+	String expectedResult_fhbkas = td1.getValue('FHBKAS', 1)
+	
+	String startTime = td2.getValue('postransactionpayment_StartTime', 1)
+	
+	String endTime = td2.getValue('postransactionpayment_EndTime', 1)
+	
+	Windows.comment('Start Time: ' + startTime)
+	
+	Windows.comment('End Time  : ' + endTime)
+	
+	// ===== Clean data (remove comma & trim) =====
+	String expectedStr = expectedResult.toString().trim().replace(',', '')
+	
+	String expectedStr_fhbkas = expectedResult_fhbkas.toString().trim().replace(',', '')
+	
+	String actualStr = totalAmount3.toString().trim().replace(',', '')
+	
+	// ===== Log raw vs clean =====
+	Windows.comment('Expected raw (Payment Value): ' + expectedResult)
+	
+	Windows.comment('Expected raw (FHBKAS)       : ' + expectedResult_fhbkas)
+	
+	Windows.comment('Actual raw (total)          : ' + totalAmount3)
+	
+	Windows.comment('Expected clean (Payment Value): ' + expectedStr)
+	
+	Windows.comment('Expected clean (FHBKAS)       : ' + expectedStr_fhbkas)
+	
+	Windows.comment('Actual clean (total)          : ' + actualStr)
+	
+	// ===== Convert to BigDecimal =====
+	BigDecimal expected = new BigDecimal(expectedStr)
+	
+	BigDecimal expected_fhbkas = new BigDecimal(expectedStr_fhbkas)
+	
+	BigDecimal actual = new BigDecimal(actualStr)
+	
+	// ===== Validation 1: Payment Value vs Total =====
+	if (expected.compareTo(actual) == 0) {
+		Windows.comment("✅ Payment Value sesuai | expected=$expected actual=$actual")
+	} else {
+		Windows.comment("❌ Payment Value tidak sesuai | expected=$expected actual=$actual")
+	}
+	
+	// ===== Validation 2: FHBKAS vs Total (optional) =====
+	if (expected_fhbkas.compareTo(actual) == 0) {
+		Windows.comment("✅ FHBKAS sesuai | expected=$expected_fhbkas actual=$actual")
+	} else {
+		Windows.comment("❌ FHBKAS tidak sesuai | expected=$expected_fhbkas actual=$actual")
+	}
+
+	
+	
+	Windows.click(
+			findWindowsObject(
+					'ss/btn_tutup'
+			)
+	)
+
+	Windows.delay(2)
+
+	Windows.click(
+			findWindowsObject(
+					'Transaksi Kasir/Menu Utama'
+			)
+	)
+
+	Windows.callTestCase(
+			findTestCase(
+					'Additional Cases/Logout'
+			),
+			[:],
+			FailureHandling.STOP_ON_FAILURE
+	)
+}

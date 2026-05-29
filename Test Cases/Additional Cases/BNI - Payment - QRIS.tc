@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>BNI - Payment - QRIS</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>fac39ec9-0fad-475d-afb0-fdcac46f4df0</testCaseGuid>
+</TestCaseEntity>

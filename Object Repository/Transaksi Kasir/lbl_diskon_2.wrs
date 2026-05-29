@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WindowsElementEntity>
+   <description></description>
+   <name>lbl_diskon_2</name>
+   <tag></tag>
+   <locator>//*[@Name='TOTAL Row 3']</locator>
+   <locatorStrategy>XPATH</locatorStrategy>
+</WindowsElementEntity>

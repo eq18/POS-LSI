@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC 08 - Get PLU from Internal Data</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>bf65c03e-64ab-4b55-81df-ae74943e5d83</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFileEntity>
+   <description></description>
+   <name>PLU - DB</name>
+   <tag></tag>
+   <connectionProperties/>
+   <containsHeaders>true</containsHeaders>
+   <csvSeperator></csvSeperator>
+   <dataFileGUID>c259ec21-0287-40da-aad1-df3e4d196e9e</dataFileGUID>
+   <dataSourceUrl>jdbc:sqlserver://localhost:49943;databaseName=STORE;encrypt=false;</dataSourceUrl>
+   <driver>DBData</driver>
+   <driverClassName></driverClassName>
+   <isInternalPath>false</isInternalPath>
+   <password>THNpMTIzNDU2Nw==</password>
+   <query>select * from store.dbo.product where product_Code in ( &#xd;
+'9330081','9400002','9500094','9500097','9500100','9500107','9500108','9530004',&#xd;
+'9530005','9530006','2900005','5400001','5400082','0999999','9230175','8300004','8300007','8300019',&#xd;
+'2500053','2500101','0630075')</query>
+   <secureUserAccount>true</secureUserAccount>
+   <sheetName></sheetName>
+   <user>SA</user>
+   <usingGlobalDBSetting>false</usingGlobalDBSetting>
+</DataFileEntity>

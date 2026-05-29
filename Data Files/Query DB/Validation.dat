@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFileEntity>
+   <description></description>
+   <name>Validation</name>
+   <tag></tag>
+   <connectionProperties/>
+   <containsHeaders>true</containsHeaders>
+   <csvSeperator></csvSeperator>
+   <dataFileGUID>c259ec21-0287-40da-aad1-df3e4d196e9e</dataFileGUID>
+   <dataSourceUrl>jdbc:sqlserver://localhost:49943;databaseName=LSISTG_STORE;encrypt=false;</dataSourceUrl>
+   <driver>DBData</driver>
+   <driverClassName></driverClassName>
+   <isInternalPath>false</isInternalPath>
+   <password>THNpMTIzNDU2Nw==</password>
+   <query>select * from LSISTG_STORE.dbo.UPLO_MT_H where DCREA>'2026-02-02 09:08:33.017' order by dcrea desc&#xd;
+select * from LSISTG_STORE.dbo.UPLO_MT_D where DCREA>'2026-02-02 09:08:33.017' order by dcrea desc</query>
+   <secureUserAccount>true</secureUserAccount>
+   <sheetName></sheetName>
+   <user>SA</user>
+   <usingGlobalDBSetting>false</usingGlobalDBSetting>
+</DataFileEntity>
