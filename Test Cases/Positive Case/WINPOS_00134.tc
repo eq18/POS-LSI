@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
-   <description>- cek diskon&#xd;
-- validasi diskon di dalam button diskon //row ke 4&#xd;
-- jangan berubah lg plisss</description>
+   <description>PWP (Purchase With Purchase) - Melakukan pembelanjaan dengan skema PWP dengan pembelanjaan > 120.000 yang pembeliannya max 4 pcs dan lebih dari itu harga normal</description>
    <name>WINPOS_00134</name>
    <tag></tag>
    <comment></comment>

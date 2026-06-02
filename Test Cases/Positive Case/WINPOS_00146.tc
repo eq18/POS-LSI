@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
-   <description></description>
+   <description>Beli 4 Diskon 10 %&#xd;
+Mix Variant = Same Variant</description>
    <name>WINPOS_00146</name>
    <tag></tag>
    <comment></comment>

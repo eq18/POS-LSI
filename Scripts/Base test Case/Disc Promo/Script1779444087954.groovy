@@ -103,7 +103,7 @@ Windows.click(findWindowsObject('Transaksi Kasir/btn_tutupCekDiskon'))
 Windows.delay(2)
 
 'Melakukan pembayaran di halaman payment'
-Windows.click(findWindowsObject('ss/btn_enter'))
+Windows.click(findWindowsObject('Transaksi Kasir/btn_enter (1)'))
 
 Windows.delay(2)
 
@@ -114,7 +114,7 @@ Windows.click(findWindowsObject('Transaksi Kasir/btn_enter'))
 Windows.delay(2)
 
 'Get total pembayaran ke 1'
-String totalPembayaranStr1 = Windows.getText(findWindowsObject('ss/txt_totalYangHarusDibayar'))
+String totalPembayaranStr1 = Windows.getText(findWindowsObject('Transaksi Kasir/txt_totalYangHarusDibayar'))
 
 long totalPembayaranAct1 = cleanNumber(totalPembayaranStr1)
 
@@ -155,7 +155,7 @@ Windows.click(findWindowsObject('Transaksi Kasir/btn_enter'))
 
 Windows.takeScreenshot()
 
-String pembayaranBerhasil1 = Windows.getText(findWindowsObject('ss/txt_pembayaranBerhasil'))
+String pembayaranBerhasil1 = Windows.getText(findWindowsObject('Transaksi Kasir/txt_pembayaranBerhasil'))
 
 if (pembayaranBerhasil1.length() > 0) {
     KeywordUtil.markPassed('✅ PAYMENT 1 BERHASIL')
@@ -218,7 +218,7 @@ if (pembayaranBerhasil1.length() > 0) {
         Windows.comment("❌ FHBKAS tidak sesuai | expected=$expected_fhbkas actual=$actual")
     }
     
-    Windows.click(findWindowsObject('ss/btn_tutup'))
+    Windows.click(findWindowsObject('Transaksi Kasir/btn_tutup'))
 
     Windows.delay(2)
 }
@@ -292,7 +292,7 @@ Windows.click(findWindowsObject('Transaksi Kasir/btn_tutupCekDiskon'))
 Windows.delay(2)
 
 'Ke halaman pembayaran untuk melakukan payment ke 2'
-Windows.click(findWindowsObject('ss/btn_enter'))
+Windows.click(findWindowsObject('Transaksi Kasir/btn_enter (1)'))
 
 Windows.delay(2)
 
@@ -303,7 +303,7 @@ Windows.click(findWindowsObject('Transaksi Kasir/btn_enter'))
 Windows.delay(2)
 
 'Get total pemmbayaran ke 2'
-String totalPembayaranStr2 = Windows.getText(findWindowsObject('ss/txt_totalYangHarusDibayar'))
+String totalPembayaranStr2 = Windows.getText(findWindowsObject('Transaksi Kasir/txt_totalYangHarusDibayar'))
 
 long totalPembayaranAct2 = cleanNumber(totalPembayaranStr2)
 
@@ -348,7 +348,7 @@ Windows.click(findWindowsObject('Transaksi Kasir/btn_enter'))
 
 Windows.takeScreenshot()
 
-String pembayaranBerhasil2 = Windows.getText(findWindowsObject('ss/txt_pembayaranBerhasil'))
+String pembayaranBerhasil2 = Windows.getText(findWindowsObject('Transaksi Kasir/txt_pembayaranBerhasil'))
 
 if (pembayaranBerhasil2.length() > 0) {
     KeywordUtil.markPassed('✅ PAYMENT 2 BERHASIL')
@@ -411,7 +411,7 @@ if (pembayaranBerhasil2.length() > 0) {
         Windows.comment("❌ FHBKAS tidak sesuai | expected=$expected_fhbkas actual=$actual")
     }
     
-    Windows.click(findWindowsObject('ss/btn_tutup'))
+    Windows.click(findWindowsObject('Transaksi Kasir/btn_tutup'))
 
     Windows.delay(2)
 

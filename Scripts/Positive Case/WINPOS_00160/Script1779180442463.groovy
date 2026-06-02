@@ -134,7 +134,7 @@ Windows.delay(2)
 // ======================================================
 // PAYMENT
 // ======================================================
-Windows.click(findWindowsObject('ss/btn_enter'))
+Windows.click(findWindowsObject('Transaksi Kasir/btn_enter (1)'))
 
 Windows.delay(2)
 
@@ -150,7 +150,7 @@ Windows.delay(2)
 // ======================================================
 // GET TOTAL PEMBAYARAN
 // ======================================================
-String totalPembayaranStr = Windows.getText(findWindowsObject('ss/txt_totalYangHarusDibayar'))
+String totalPembayaranStr = Windows.getText(findWindowsObject('Transaksi Kasir/txt_totalYangHarusDibayar'))
 
 long totalPembayaranAct = cleanNumber(totalPembayaranStr)
 
@@ -204,15 +204,15 @@ Windows.takeScreenshot()
 // ======================================================
 // CLOSE PAYMENT
 // ======================================================
-Windows.click(findWindowsObject('ss/btn_close1'), FailureHandling.OPTIONAL)
+Windows.click(findWindowsObject('Transaksi Kasir/btn_close1'), FailureHandling.OPTIONAL)
 
 Windows.delay(1)
 
 Windows.takeScreenshot()
 
-Windows.click(findWindowsObject('ss/btn_close2'))
+Windows.click(findWindowsObject('Transaksi Kasir/btn_close2'))
 
-String pembayaranBerhasil = Windows.getText(findWindowsObject('ss/txt_pembayaranBerhasil'))
+String pembayaranBerhasil = Windows.getText(findWindowsObject('Transaksi Kasir/txt_pembayaranBerhasil'))
 
 if (pembayaranBerhasil.length() > 0) {
     KeywordUtil.markPassed('✅ PAYMENT BERHASIL')
@@ -221,7 +221,7 @@ if (pembayaranBerhasil.length() > 0) {
 
     Windows.takeScreenshot()
 
-    Windows.click(findWindowsObject('ss/btn_tutup'))
+    Windows.click(findWindowsObject('Transaksi Kasir/btn_tutup'))
 
     Windows.delay(2)
 

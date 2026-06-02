@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
-   <description>- cek diskon&#xd;
-- validasi diskon di dalam button diskon&#xd;
-- dua transaksi</description>
+   <description>Multilevel - Lvl 1 Disc. % - Lvl 2 Disc. Rp
+Note : Lvl 2 Min Qty 3</description>
    <name>WINPOS_00204</name>
    <tag></tag>
    <comment></comment>

@@ -178,7 +178,7 @@ Windows.delay(2)
 // PAYMENT PAGE 1
 // ======================================================
 Windows.click(
-		findWindowsObject('ss/btn_enter')
+		findWindowsObject('Transaksi Kasir/btn_enter (1)')
 )
 
 Windows.delay(2)
@@ -196,7 +196,7 @@ Windows.delay(2)
 // ======================================================
 String totalPembayaranStr1 =
 		Windows.getText(
-				findWindowsObject('ss/txt_totalYangHarusDibayar')
+				findWindowsObject('Transaksi Kasir/txt_totalYangHarusDibayar')
 		)
 
 long totalPembayaranAct1 =
@@ -271,7 +271,7 @@ Windows.takeScreenshot()
 
 String pembayaranBerhasil1 =
 		Windows.getText(
-				findWindowsObject('ss/txt_pembayaranBerhasil')
+				findWindowsObject('Transaksi Kasir/txt_pembayaranBerhasil')
 		)
 
 if (pembayaranBerhasil1.length() > 0) {
@@ -338,7 +338,7 @@ if (pembayaranBerhasil1.length() > 0) {
 	}
 	
 	Windows.click(
-			findWindowsObject('ss/btn_tutup')
+			findWindowsObject('Transaksi Kasir/btn_tutup')
 	)
 
 	Windows.delay(2)
@@ -479,7 +479,7 @@ Windows.delay(2)
 // PAYMENT PAGE 2
 // ======================================================
 Windows.click(
-		findWindowsObject('ss/btn_enter')
+		findWindowsObject('Transaksi Kasir/btn_enter (1)')
 )
 
 Windows.delay(2)
@@ -497,7 +497,7 @@ Windows.delay(2)
 // ======================================================
 String totalPembayaranStr2 =
 		Windows.getText(
-				findWindowsObject('ss/txt_totalYangHarusDibayar')
+				findWindowsObject('Transaksi Kasir/txt_totalYangHarusDibayar')
 		)
 
 long totalPembayaranAct2 =
@@ -578,7 +578,7 @@ Windows.takeScreenshot()
 
 String pembayaranBerhasil2 =
 		Windows.getText(
-				findWindowsObject('ss/txt_pembayaranBerhasil')
+				findWindowsObject('Transaksi Kasir/txt_pembayaranBerhasil')
 		)
 
 if (pembayaranBerhasil2.length() > 0) {
@@ -645,7 +645,7 @@ if (pembayaranBerhasil2.length() > 0) {
 	}
 
 	Windows.click(
-			findWindowsObject('ss/btn_tutup')
+			findWindowsObject('Transaksi Kasir/btn_tutup')
 	)
 
 	Windows.delay(2)

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
-   <description></description>
+   <description>PWP - Melakukan pembelanjaan dengan skema PWP dengan pembelanjaan > 120.000</description>
    <name>WINPOS_00133</name>
    <tag></tag>
    <comment></comment>

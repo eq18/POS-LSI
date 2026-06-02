@@ -51,17 +51,17 @@ Windows.sendKeys(findWindowsObject('Object Repository/Transaksi Kasir/txt_PLU'),
 Windows.delay(2)
 
 'Klik Enter untuk melanjutkan pembayaran'
-Windows.click(findWindowsObject('Object Repository/ss/btn_enter'))
+Windows.click(findWindowsObject('Object Repository/Transaksi Kasir/btn_enter (1)'))
 
 Windows.delay(10)
 
 'Klik Enter untuk melanjutkan pembayaran'
-Windows.click(findWindowsObject('Object Repository/ss/btn_enter'))
+Windows.click(findWindowsObject('Object Repository/Transaksi Kasir/btn_enter (1)'))
 
 Windows.takeScreenshot()
 
 'Ambil total belanja'
-total = Windows.getText(findWindowsObject('Object Repository/ss/txt_totalYangHarusDibayar'))
+total = Windows.getText(findWindowsObject('Object Repository/Transaksi Kasir/txt_totalYangHarusDibayar'))
 
 'Input total belanja'
 Windows.setText(findWindowsObject('Transaksi Kasir/txt_tunai'), total)
@@ -81,23 +81,23 @@ Windows.click(findWindowsObject('Transaksi Kasir/btn_enter'))
 Windows.takeScreenshot()
 
 'Close Notification'
-Windows.click(findWindowsObject('Object Repository/ss/btn_close1'))
+Windows.click(findWindowsObject('Object Repository/Transaksi Kasir/btn_close1'))
 
 Windows.delay(1)
 
 Windows.takeScreenshot()
 
 'Close Notification'
-Windows.click(findWindowsObject('Object Repository/ss/btn_close2'))
+Windows.click(findWindowsObject('Object Repository/Transaksi Kasir/btn_close2'))
 
-permbayaranBerhasil = Windows.getText(findWindowsObject('Object Repository/ss/txt_pembayaranBerhasil'))
+permbayaranBerhasil = Windows.getText(findWindowsObject('Object Repository/Transaksi Kasir/txt_pembayaranBerhasil'))
 
 if (permbayaranBerhasil.contains(permbayaranBerhasil)) {
     Windows.delay(2)
 
     Windows.takeScreenshot()
 
-    Windows.click(findWindowsObject('Object Repository/ss/btn_tutup'))
+    Windows.click(findWindowsObject('Object Repository/Transaksi Kasir/btn_tutup'))
 
     Windows.delay(2)
 
