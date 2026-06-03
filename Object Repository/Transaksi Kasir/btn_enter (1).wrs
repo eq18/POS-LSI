@@ -3,7 +3,7 @@
    <description></description>
    <name>btn_enter (1)</name>
    <tag></tag>
-   <locator>/Window/Pane[1]/Pane[9]/Button[2]</locator>
+   <locator>//Button[@AutomationId='ucButtonRound12']</locator>
    <locatorStrategy>XPATH</locatorStrategy>
    <properties>
       <isSelected>false</isSelected>

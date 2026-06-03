@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>WINPOS_00128</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>88b44728-294a-4c3c-91a3-56f86ae12cc5</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>304159bd-a3a8-4b36-83eb-bf8164e8ad55</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>2e33c71a-1313-4da5-971f-c37eb26187a8</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>304159bd-a3a8-4b36-83eb-bf8164e8ad55</id>
+      <masked>false</masked>
+      <name>qty</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>2e33c71a-1313-4da5-971f-c37eb26187a8</id>
+      <masked>false</masked>
+      <name>plu</name>
+   </variable>
+</TestCaseEntity>

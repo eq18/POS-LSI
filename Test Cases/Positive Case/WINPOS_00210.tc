@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Promo Credit Card (Min Belanja Rp 500.000)</description>
+   <name>WINPOS_00210</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>c10e7e61-fef5-4bf3-b5e5-f12c5558064d</testCaseGuid>
+</TestCaseEntity>

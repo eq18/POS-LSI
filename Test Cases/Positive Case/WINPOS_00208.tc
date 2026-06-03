@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Promo Suprise Gift (setting total hadiah = 95 dan minimum belanja)</description>
+   <name>WINPOS_00208</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>20ee3c5a-d2b1-4d1b-b10b-783d2ed4cae3</testCaseGuid>
+</TestCaseEntity>

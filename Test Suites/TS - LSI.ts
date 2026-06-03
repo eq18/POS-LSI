@@ -98,7 +98,7 @@
       <guid>c1c8eddb-edab-41fc-a4ee-3a7d67a35860</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>false</isRun>
-      <testCaseId>Test Cases/Positive Case/WINPOS_00204</testCaseId>
+      <testCaseId>Test Cases/Positive Case/WINPOS_00199</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
       <variableLink>
          <testDataLinkId></testDataLinkId>
@@ -188,7 +188,7 @@
       <guid>1dd9946d-799f-41ba-a058-ea8693618761</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>false</isRun>
-      <testCaseId>Test Cases/Positive Case/WINPOS_00205</testCaseId>
+      <testCaseId>Test Cases/Positive Case/WINPOS_00200</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
       <variableLink>
          <testDataLinkId></testDataLinkId>
@@ -240,7 +240,7 @@
       <guid>7ecaede3-0eb7-40c8-b6b5-e5f815164173</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>false</isRun>
-      <testCaseId>Test Cases/Positive Case/WINPOS_00130</testCaseId>
+      <testCaseId>Test Cases/Positive Case/WINPOS_00128</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
       <variableLink>
          <testDataLinkId></testDataLinkId>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Login - E-Receipt</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>ae72cf80-0210-4c3a-80b4-aa2247babf8a</testCaseGuid>
+</TestCaseEntity>

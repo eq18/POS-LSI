@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>reuse this - check the creteria first ya - Copy</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>e05d8744-d77e-4971-924b-a0f79236d059</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>4b1783a9-e708-4fcb-a45d-b9d48e6959c3</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>ac32de94-8275-4a25-8784-2d87539d37df</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>4b1783a9-e708-4fcb-a45d-b9d48e6959c3</id>
+      <masked>false</masked>
+      <name>qty</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>ac32de94-8275-4a25-8784-2d87539d37df</id>
+      <masked>false</masked>
+      <name>plu</name>
+   </variable>
+</TestCaseEntity>

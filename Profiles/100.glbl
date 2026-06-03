@@ -46,4 +46,11 @@
       <protected>false</protected>
       <valueType>STRING</valueType>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'D:\\POS_version75\\POS_version75\\LSI.POS.CashRegister.exe'</initValue>
+      <name>appPathER</name>
+      <protected>false</protected>
+      <valueType>STRING</valueType>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
