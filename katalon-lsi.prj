@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <Project>
    <description></description>
@@ -33,3 +34,40 @@
    <timeStampInProperties>false</timeStampInProperties>
    <type>DESKTOP</type>
 </Project>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<Project>
+   <description></description>
+   <name>pos-poc-mii</name>
+   <tag></tag>
+   <UUID>f8a1d173-1105-418c-a788-8e91830c9a63</UUID>
+   <createdEdition>ENTERPRISE</createdEdition>
+   <createdVersion>9.7.7</createdVersion>
+   <freeLicense>false</freeLicense>
+   <migratedVersion>5.9.0</migratedVersion>
+   <modifiedEdition>ENTERPRISE</modifiedEdition>
+   <modifiedVersion>11.2.0</modifiedVersion>
+   <pageLoadTimeout>0</pageLoadTimeout>
+   <projectFileLocation>C:\Users\kasir\git\POS-LSI\katalon-lsi.prj</projectFileLocation>
+   <sourceContent>
+      <sourceFolderList>
+         <sourceFolderConfiguration>
+            <url>Include/scripts/groovy</url>
+         </sourceFolderConfiguration>
+      </sourceFolderList>
+      <systemFolderList>
+         <systemFolderConfiguration>
+            <url>Include/scripts/groovy</url>
+         </systemFolderConfiguration>
+         <systemFolderConfiguration>
+            <url>Include/features</url>
+         </systemFolderConfiguration>
+         <systemFolderConfiguration>
+            <url>Include/config</url>
+         </systemFolderConfiguration>
+      </systemFolderList>
+   </sourceContent>
+   <timeStampInProperties>false</timeStampInProperties>
+   <type>DESKTOP</type>
+</Project>
+>>>>>>> a6abaa60a116320496d74671b68a95baf36785a0
