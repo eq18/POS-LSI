@@ -9,9 +9,9 @@
    <freeLicense>false</freeLicense>
    <migratedVersion>5.9.0</migratedVersion>
    <modifiedEdition>ENTERPRISE</modifiedEdition>
-   <modifiedVersion>11.1.3</modifiedVersion>
+   <modifiedVersion>11.2.0</modifiedVersion>
    <pageLoadTimeout>0</pageLoadTimeout>
-   <projectFileLocation>C:\Users\kasir\Documents\Workspace\katalon-lsi\katalon-lsi.prj</projectFileLocation>
+   <projectFileLocation>C:\Users\kasir\git\POS-LSI\katalon-lsi.prj</projectFileLocation>
    <sourceContent>
       <sourceFolderList>
          <sourceFolderConfiguration>
