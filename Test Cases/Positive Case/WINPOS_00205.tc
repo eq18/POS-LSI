@@ -1,34 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
-   <description></description>
+   <description>- cek diskon&#xd;
+- validasi diskon di dalam button diskon&#xd;
+- dua transaksi</description>
    <name>WINPOS_00205</name>
    <tag></tag>
    <comment></comment>
    <recordOption>OTHER</recordOption>
-   <testCaseGuid>0036339a-0207-44d4-abe6-d8fa43a6cb25</testCaseGuid>
+   <testCaseGuid>58cabbaa-fbf6-484a-a2f5-f54a3e5debcf</testCaseGuid>
    <variableLinks>
       <testDataLinkId></testDataLinkId>
       <type>DEFAULT</type>
       <value></value>
-      <variableId>5798563d-3244-485a-a618-9eac9649e8c1</variableId>
+      <variableId>293bbcaa-c8b9-42ba-9058-07de78dcc722</variableId>
    </variableLinks>
    <variableLinks>
       <testDataLinkId></testDataLinkId>
       <type>DEFAULT</type>
       <value></value>
-      <variableId>e88e721e-1755-4539-8767-1f95c7a5fe57</variableId>
+      <variableId>50cb5232-3e5d-49b9-a675-05bff2266ebd</variableId>
    </variableLinks>
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
-      <id>5798563d-3244-485a-a618-9eac9649e8c1</id>
+      <id>293bbcaa-c8b9-42ba-9058-07de78dcc722</id>
       <masked>false</masked>
       <name>qty</name>
    </variable>
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
-      <id>e88e721e-1755-4539-8767-1f95c7a5fe57</id>
+      <id>50cb5232-3e5d-49b9-a675-05bff2266ebd</id>
       <masked>false</masked>
       <name>plu</name>
    </variable>

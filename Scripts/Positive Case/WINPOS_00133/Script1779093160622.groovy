@@ -5,378 +5,199 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testdata.TestDataFactory as TestDataFactory
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable as GlobalVariable
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import org.openqa.selenium.Keys as Keys
 
-// ======================================================
-// LOGIN
-// ======================================================
+/*GUNAKAN TC INI JIKA:
+ 1. VALIDASI DISKON DI HALAMAN PEMBAYARAN
+ 2. ADA 3 PEMBAYARAN
+ */
+'Functional clean number'
+
+'Login'
 Windows.callTestCase(findTestCase('Additional Cases/Login'), [:], FailureHandling.STOP_ON_FAILURE)
+
+Windows.takeScreenshot()
+
+promo = 'Promo Disc Rp %'
+
+Windows.comment('Promo Package = ' + promo)
 
 CustomKeywords.'custom.WindowUtils.switchToWindowTitle'('Main Menu')
 
-Windows.takeScreenshot()
-
-// ======================================================
-// OPEN TRANSAKSI KASIR
-// ======================================================
-Windows.click(findWindowsObject('Object Repository/Transaksi Kasir/btn_transaksiKasir'))
+'Klik tombol transaksi kasir'
+Windows.click(findWindowsObject('Transaksi Kasir/btn_transaksiKasir'))
 
 Windows.delay(2)
 
 Windows.takeScreenshot()
 
-// ======================================================
-// CLOSE NOTIFICATION
-// ======================================================
-not_run: Windows.click(findWindowsObject('Transaksi Kasir/btn_close'), FailureHandling.OPTIONAL)
-
-Windows.delay(5)
+CustomKeywords.'custom.WindowUtils.switchToWindowTitle'('Transaksi Kasir')
 
 Windows.takeScreenshot()
 
-// ======================================================
-// LOAD EXCEL
-// ======================================================
-TestData td = TestDataFactory.findTestData('Promotion Folder/Promo Percent')
+Windows.delay(3)
 
-// ======================================================
-// GRAND TOTAL
-// ======================================================
-long grandTotalExpected = 0
+'Load Excel'
+TestData td = TestDataFactory.findTestData('Promotion Folder/Promo PWP')
 
-// ======================================================
-// LOOP EXCEL
-// ======================================================
-for (int row = 1; ; row++) {
-    // ==================================================
-    // STOP LOOP JIKA PLU KOSONG
-    // ==================================================
+'Looping transaksi'
+for (int row = 1; row <= 3; row++) {
     String plu = td.getValue('plu', row)
 
-    if ((plu == null) || plu.trim().isEmpty()) {
-        KeywordUtil.logInfo("STOP LOOP di row $row karena PLU kosong")
+    String qty = td.getValue('qty', row)
 
-        break
-    }
-    
-    // ==================================================
-    // EXCEL DATA
-    // ==================================================
-    long qtyExp = cleanNumber(td.getValue('qty', row))
+    KeywordUtil.logInfo('INPUT PLU = ' + plu)
 
-    long hargaSatuanExp = cleanNumber(td.getValue('harga satuan', row))
+    KeywordUtil.logInfo('INPUT QTY = ' + qty)
 
-    long diskonExp = cleanNumber(td.getValue('diskon', row))
+    'Input PLU'
+    Windows.click(findWindowsObject('Transaksi Kasir/txt_PLU'))
 
-    long expectedExp = cleanNumber(td.getValue('expected', row))
+    Windows.sendKeys(findWindowsObject('Transaksi Kasir/txt_PLU'), plu)
 
-    // ==================================================
-    // ACCUMULATE GRAND TOTAL
-    // ==================================================
-    grandTotalExpected = (grandTotalExpected + expectedExp)
-
-    // ==================================================
-    // RE-FIND OBJECT
-    // ==================================================
-    def txtPLU = findWindowsObject('Object Repository/Transaksi Kasir/txt_PLU')
-
-    // ==================================================
-    // SWITCH WINDOW
-    // ==================================================
-    Windows.switchToWindowTitle('Transaksi Kasir')
-
-    Windows.delay(1)
-
-    // ==================================================
-    // INPUT PLU
-    // ==================================================
-    Windows.click(txtPLU)
-
-    Windows.delay(1)
-
-    Windows.sendKeys(txtPLU, plu)
-
-    Windows.delay(1)
-
-    Windows.sendKeys(txtPLU, Keys.chord(Keys.ENTER))
+    Windows.sendKeys(findWindowsObject('Transaksi Kasir/txt_PLU'), Keys.chord(Keys.ENTER))
 
     Windows.delay(2)
 
-    // ==================================================
-    // INPUT QTY
-    // ==================================================
-    Windows.click(txtPLU)
+    'Input Quantity'
+    Windows.setText(findWindowsObject('Transaksi Kasir/txt_PLU'), qty)
 
-    Windows.delay(1)
+    Windows.sendKeys(findWindowsObject('Transaksi Kasir/txt_PLU'), Keys.chord(Keys.ENTER))
 
-    Windows.sendKeys(txtPLU, qtyExp.toString())
-
-    Windows.delay(1)
-
-    Windows.sendKeys(txtPLU, Keys.chord(Keys.ENTER))
-
-    Windows.delay(2)
-
-    // ==================================================
-    // UI ROW
-    // ==================================================
-    int uiRow = row - 1
-
-    Windows.delay(1)
-
-    // ==================================================
-    // GET UI VALUE
-    // ==================================================
-    String hargaActStr = Windows.getText(findWindowsObject('Validation/cell', [('row') : uiRow, ('colName') : 'HARGA']))
-
-    String qtyActStr = Windows.getText(findWindowsObject('Validation/cell', [('row') : uiRow, ('colName') : 'QTY']))
-
-    String hematActStr = Windows.getText(findWindowsObject('Validation/cell', [('row') : uiRow, ('colName') : 'HEMAT']))
-
-    String jumlahActStr = Windows.getText(findWindowsObject('Validation/cell', [('row') : uiRow, ('colName') : 'JUMLAH']))
-
-    // ==================================================
-    // CLEAN NUMBER
-    // ==================================================
-    long hargaAct = cleanNumber(hargaActStr)
-
-    long qtyAct = cleanNumber(qtyActStr)
-
-    long hematAct = cleanNumber(hematActStr)
-
-    long jumlahAct = cleanNumber(jumlahActStr)
-
-    // ==================================================
-    // FORMULA
-    // (harga x qty) - hemat = jumlah
-    // ==================================================
-    long formulaResult = (hargaAct * qtyAct) - hematAct
-
-    // ==================================================
-    // HUMAN READABLE VALIDATION
-    // ==================================================
-    boolean isValid = true
-
-    StringBuilder validationMsg = new StringBuilder()
-
-    validationMsg.append('\n')
-
-    validationMsg.append('====================================\n')
-
-    validationMsg.append("ROW $row VALIDATION RESULT")
-
-    validationMsg.append('====================================\n')
-
-    validationMsg.append("PLU            : $plu")
-
-    validationMsg.append("QTY            : $qtyAct")
-
-    validationMsg.append("HARGA          : $hargaAct")
-
-    validationMsg.append("HEMAT          : $hematAct")
-
-    validationMsg.append("JUMLAH         : $jumlahAct")
-
-    validationMsg.append('------------------------------------\n')
-
-    // ==================================================
-    // VALIDASI HARGA
-    // ==================================================
-    if (hargaAct == hargaSatuanExp) {
-        validationMsg.append('✅ HARGA SESUAI\n')
-    } else {
-        isValid = false
-
-        validationMsg.append('❌ HARGA TIDAK SESUAI\n')
-
-        validationMsg.append("   Expected : $hargaSatuanExp")
-
-        validationMsg.append("   Actual   : $hargaAct")
-    }
-    
-    // ==================================================
-    // VALIDASI DISKON
-    // ==================================================
-    if (hematAct == diskonExp) {
-        validationMsg.append('✅ DISKON SESUAI\n')
-    } else {
-        isValid = false
-
-        validationMsg.append('❌ DISKON TIDAK SESUAI\n')
-
-        validationMsg.append("   Expected : $diskonExp")
-
-        validationMsg.append("   Actual   : $hematAct")
-    }
-    
-    // ==================================================
-    // VALIDASI JUMLAH
-    // ==================================================
-    if (jumlahAct == expectedExp) {
-        validationMsg.append('✅ JUMLAH SESUAI\n')
-    } else {
-        isValid = false
-
-        validationMsg.append('❌ JUMLAH TIDAK SESUAI\n')
-
-        validationMsg.append("   Expected : $expectedExp")
-
-        validationMsg.append("   Actual   : $jumlahAct")
-    }
-    
-    // ==================================================
-    // VALIDASI FORMULA
-    // ==================================================
-    if (formulaResult == expectedExp) {
-        validationMsg.append('✅ FORMULA VALID\n')
-    } else {
-        isValid = false
-
-        validationMsg.append('❌ FORMULA TIDAK VALID\n')
-
-        validationMsg.append("   Formula Result : $formulaResult")
-
-        validationMsg.append("   Expected       : $expectedExp")
-    }
-    
-    validationMsg.append('------------------------------------\n')
-
-    // ==================================================
-    // FINAL STATUS
-    // ==================================================
-    if (isValid) {
-        validationMsg.append('🎉 STATUS : VALID\n')
-
-        KeywordUtil.markPassed(validationMsg.toString())
-    } else {
-        validationMsg.append('🚨 STATUS : TIDAK VALID\n')
-
-        KeywordUtil.markWarning(validationMsg.toString())
-    }
-    
-    Windows.takeScreenshot()
+    Windows.delay(3)
 }
 
-// ======================================================
-// PAYMENT PAGE
-// ======================================================
-Windows.click(findWindowsObject('Object Repository/ss/btn_enter'))
-
-Windows.delay(2)
 
 Windows.takeScreenshot()
 
-// ======================================================
-// GET TOTAL PEMBAYARAN
-// ======================================================
-String totalPembayaranStr = Windows.getText(findWindowsObject('Object Repository/ss/txt_totalYangHarusDibayar'))
+'Payment Page'
+Windows.click(findWindowsObject('Transaksi Kasir/btn_enter (1)'))
 
-long totalPembayaranAct = cleanNumber(totalPembayaranStr)
+Windows.delay(3)
 
-// ======================================================
-// PAYMENT VALIDATION
-// ======================================================
-StringBuilder paymentValidation = new StringBuilder()
+Windows.takeScreenshot()
 
-paymentValidation.append('\n')
+'Validasi pembayaran ke - 1'
+String totalPembayaranStr1 = Windows.getText(findWindowsObject('Transaksi Kasir/txt_totalYangHarusDibayar'))
 
-paymentValidation.append('====================================\n')
+long totalPembayaranAct1 = cleanNumber(totalPembayaranStr1)
 
-paymentValidation.append('PAYMENT VALIDATION RESULT\n')
+'Expected Payment 1'
+long grandTotalExpected1 = td.getValue('expected', 1).toLong()
 
-paymentValidation.append('====================================\n')
+KeywordUtil.logInfo('EXPECTED PAYMENT 1 = ' + grandTotalExpected1)
 
-paymentValidation.append("TOTAL EXPECTED EXCEL : $grandTotalExpected")
+KeywordUtil.logInfo('ACTUAL PAYMENT 1 = ' + totalPembayaranAct1)
 
-paymentValidation.append("TOTAL PEMBAYARAN POS : $totalPembayaranAct")
-
-paymentValidation.append('------------------------------------\n')
-
-if (grandTotalExpected == totalPembayaranAct) {
-    paymentValidation.append('✅ TOTAL PEMBAYARAN SESUAI\n')
-
-    paymentValidation.append('🎉 STATUS : VALID\n')
-
-    KeywordUtil.markPassed(paymentValidation.toString())
+'Validasi'
+if (grandTotalExpected1 == totalPembayaranAct1) {
+    KeywordUtil.markPassed((((('✅ PAYMENT 1 SESUAI\n' + 'EXPECTED = ') + grandTotalExpected1) + '\n') + 'ACTUAL = ') + totalPembayaranAct1)
 } else {
-    paymentValidation.append('❌ TOTAL PEMBAYARAN TIDAK SESUAI\n')
-
-    paymentValidation.append("Expected : $grandTotalExpected")
-
-    paymentValidation.append("Actual   : $totalPembayaranAct")
-
-    paymentValidation.append('🚨 STATUS : TIDAK VALID\n')
-
-    KeywordUtil.markWarning(paymentValidation.toString())
+    KeywordUtil.markFailed((((('❌ PAYMENT 1 TIDAK SESUAI\n' + 'EXPECTED = ') + grandTotalExpected1) + '\n') + 'ACTUAL = ') + 
+        totalPembayaranAct1)
 }
 
 Windows.takeScreenshot()
 
-// ======================================================
-// INPUT PEMBAYARAN
-// ======================================================
-GlobalVariable.total = totalPembayaranStr
+'Input payment ke 1'
+int nilai1 = Integer.parseInt(totalPembayaranStr1.replace(',', ''))
 
-int nilai = Integer.parseInt(totalPembayaranStr.replace(',', ''))
+int totalAmount1 = Math.ceil(nilai1 / 100.0) * 100
 
-int totalAmount = Math.ceil(nilai / 100.0) * 100
+String totalBelanja1 = totalAmount1.toString()
 
-String totalBelanja = totalAmount.toString()
-
-Windows.comment(totalBelanja)
-
-Windows.setText(findWindowsObject('Transaksi Kasir/txt_tunai'), totalBelanja)
+Windows.setText(findWindowsObject('Transaksi Kasir/txt_tunai'), totalBelanja1)
 
 Windows.delay(2)
 
 Windows.takeScreenshot()
 
-// ======================================================
-// FINAL PAYMENT
-// ======================================================
+'Final payment ke 1'
 Windows.click(findWindowsObject('Transaksi Kasir/btn_enter'))
 
 Windows.delay(2)
 
 Windows.click(findWindowsObject('Transaksi Kasir/btn_enter'))
 
-Windows.takeScreenshot()
-
-Windows.click(findWindowsObject('Object Repository/ss/btn_close1'), FailureHandling.OPTIONAL)
-
-Windows.delay(1)
+Windows.delay(3)
 
 Windows.takeScreenshot()
 
-Windows.click(findWindowsObject('Object Repository/ss/btn_close2'))
+Windows.verifyElementPresent(findWindowsObject('Transaksi Kasir/txt_pembayaranBerhasil'), 1000)
 
-String pembayaranBerhasil = Windows.getText(findWindowsObject('Object Repository/ss/txt_pembayaranBerhasil'))
+String pembayaranBerhasil1 = Windows.getText(findWindowsObject('Transaksi Kasir/txt_pembayaranBerhasil'))
 
-if (pembayaranBerhasil.contains(pembayaranBerhasil)) {
-    Windows.delay(2)
+if (pembayaranBerhasil1.length() > 0) {
+    KeywordUtil.markPassed('✅ PAYMENT 1 BERHASIL')
 
-    Windows.takeScreenshot()
+    def td2 = findTestData('Query DB/Cash Payment')
 
-    Windows.click(findWindowsObject('Object Repository/ss/btn_tutup'))
+    def td1 = findTestData('Query DB/Validation')
 
-    Windows.delay(2)
+    String expectedResult = td2.getValue('postransactionpayment_Value', 1)
 
-    Windows.takeScreenshot()
+    String expectedResult_fhbkas = td1.getValue('FHBKAS', 1)
 
-    Windows.click(findWindowsObject('Object Repository/Transaksi Kasir/Menu Utama'))
+    String startTime = td2.getValue('postransactionpayment_StartTime', 1)
 
-    Windows.callTestCase(findTestCase('ARCHIEVE/Additional Case/Logout'), [:], FailureHandling.STOP_ON_FAILURE)
-}
+    String endTime = td2.getValue('postransactionpayment_EndTime', 1)
 
-// ======================================================
-// CLEAN NUMBER
-// ======================================================
-long cleanNumber(String s) {
-    if ((s == null) || s.trim().isEmpty()) {
-        return 0
+    Windows.comment('Start Time: ' + startTime)
+
+    Windows.comment('End Time  : ' + endTime)
+
+    // ===== Clean data (remove comma & trim) =====
+    String expectedStr = expectedResult.toString().trim().replace(',', '')
+
+    String expectedStr_fhbkas = expectedResult_fhbkas.toString().trim().replace(',', '')
+
+    String actualStr = totalAmount1.toString().trim().replace(',', '')
+
+    // ===== Log raw vs clean =====
+    Windows.comment('Expected raw (Payment Value): ' + expectedResult)
+
+    Windows.comment('Expected raw (FHBKAS)       : ' + expectedResult_fhbkas)
+
+    Windows.comment('Actual raw (total)          : ' + totalAmount1)
+
+    Windows.comment('Expected clean (Payment Value): ' + expectedStr)
+
+    Windows.comment('Expected clean (FHBKAS)       : ' + expectedStr_fhbkas)
+
+    Windows.comment('Actual clean (total)          : ' + actualStr)
+
+    // ===== Convert to BigDecimal =====
+    BigDecimal expected = new BigDecimal(expectedStr)
+
+    BigDecimal expected_fhbkas = new BigDecimal(expectedStr_fhbkas)
+
+    BigDecimal actual = new BigDecimal(actualStr)
+
+    // ===== Validation 1: Payment Value vs Total =====
+    if (expected.compareTo(actual) == 0) {
+        Windows.comment("✅ Payment Value sesuai | expected=$expected actual=$actual")
+    } else {
+        Windows.comment("❌ Payment Value tidak sesuai | expected=$expected actual=$actual")
     }
     
-    return s.replaceAll('[^0-9-]', '').toLong()
+    // ===== Validation 2: FHBKAS vs Total (optional) =====
+    if (expected_fhbkas.compareTo(actual) == 0) {
+        Windows.comment("✅ FHBKAS sesuai | expected=$expected_fhbkas actual=$actual")
+    } else {
+        Windows.comment("❌ FHBKAS tidak sesuai | expected=$expected_fhbkas actual=$actual")
+    }
+    
+    Windows.click(findWindowsObject('Transaksi Kasir/btn_tutup'))
+
+    Windows.delay(2)
+
+    Windows.click(findWindowsObject('Transaksi Kasir/Menu Utama'))
+
+    Windows.callTestCase(findTestCase('Additional Cases/Logout'), [:], FailureHandling.STOP_ON_FAILURE)
+}
+
+def cleanNumber(String value) {
+    return value.replaceAll('[^0-9-]', '').toLong()
 }
 

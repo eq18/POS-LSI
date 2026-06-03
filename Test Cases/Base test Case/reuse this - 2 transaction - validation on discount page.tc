@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>reuse this - 2 transaction - validation on discount page</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>1c5920a3-bf0d-4ede-941e-b8ca5a9dd8cb</testCaseGuid>
+</TestCaseEntity>

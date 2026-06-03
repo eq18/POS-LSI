@@ -246,7 +246,7 @@ Windows.delay(3)
 
 Windows.takeScreenshot()
 
-Windows.verifyElementPresent(findWindowsObject('ss/txt_pembayaranBerhasil'), 1000)
+Windows.verifyElementPresent(findWindowsObject('Transaksi Kasir/txt_pembayaranBerhasil'), 1000)
 
 String pembayaranBerhasil1 =
 		Windows.getText(
@@ -514,7 +514,7 @@ Windows.delay(3)
 Windows.takeScreenshot()
 
 
-Windows.verifyElementPresent(findWindowsObject('ss/txt_pembayaranBerhasil'), 1000)
+Windows.verifyElementPresent(findWindowsObject('Transaksi Kasir/txt_pembayaranBerhasil'), 1000)
 String pembayaranBerhasil2 =
 		Windows.getText(
 				findWindowsObject(
@@ -779,7 +779,7 @@ Windows.delay(3)
 
 Windows.takeScreenshot()
 
-Windows.verifyElementPresent(findWindowsObject('ss/txt_pembayaranBerhasil'), 1000)
+Windows.verifyElementPresent(findWindowsObject('Transaksi Kasir/txt_pembayaranBerhasil'), 1000)
 String pembayaranBerhasil3 =
 		Windows.getText(
 				findWindowsObject(

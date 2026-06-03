@@ -279,7 +279,7 @@ for (int row = 1; row <= totalRow; row++) {
 // ======================================================
 // PAYMENT PAGE
 // ======================================================
-Windows.click(findWindowsObject('Object Repository/ss/btn_enter'))
+Windows.click(findWindowsObject('Object Repository/Transaksi Kasir/btn_enter (1)'))
 
 Windows.delay(2)
 
@@ -288,7 +288,7 @@ Windows.takeScreenshot()
 // ======================================================
 // GET TOTAL BELANJA
 // ======================================================
-String totalBelanjaStr = Windows.getText(findWindowsObject('ss/txt_totalYangHarusDibayar'))
+String totalBelanjaStr = Windows.getText(findWindowsObject('Transaksi Kasir/txt_totalYangHarusDibayar'))
 
 long totalBelanjaAct = cleanNumber(totalBelanjaStr)
 
@@ -404,14 +404,14 @@ Windows.takeScreenshot()
 // ======================================================
 // PEMBAYARAN BERHASIL
 // ======================================================
-String pembayaranBerhasil = Windows.getText(findWindowsObject('Object Repository/ss/txt_pembayaranBerhasil'))
+String pembayaranBerhasil = Windows.getText(findWindowsObject('Object Repository/Transaksi Kasir/txt_pembayaranBerhasil'))
 
 if (pembayaranBerhasil.contains(pembayaranBerhasil)) {
     Windows.delay(2)
 
     Windows.takeScreenshot()
 
-    Windows.click(findWindowsObject('Object Repository/ss/btn_tutup'))
+    Windows.click(findWindowsObject('Object Repository/Transaksi Kasir/btn_tutup'))
 
     Windows.delay(2)
 

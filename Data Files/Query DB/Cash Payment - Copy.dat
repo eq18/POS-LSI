@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFileEntity>
+   <description></description>
+   <name>Cash Payment - Copy</name>
+   <tag></tag>
+   <connectionProperties/>
+   <containsHeaders>true</containsHeaders>
+   <csvSeperator></csvSeperator>
+   <dataFileGUID>c259ec21-0287-40da-aad1-df3e4d196e9e</dataFileGUID>
+   <dataSourceUrl>jdbc:sqlserver://localhost:49943;databaseName=STORE;encrypt=false;</dataSourceUrl>
+   <driver>DBData</driver>
+   <driverClassName></driverClassName>
+   <isInternalPath>false</isInternalPath>
+   <password>THNpMTIzNDU2Nw==</password>
+   <query>SELECT DISTINCT a.postransactionheader_ID, c.postransactiondetail_UnitValue, c.postransactiondetail_Qty, c.product_Code, b.PromoCode, b.Discount,c.postransactiondetail_LineTotalAmount, &#xd;
+a.postransactionheader_EndTime&#xd;
+FROM POSTransaction_header a &#xd;
+inner join POSTransactionDiscount b ON a.postransactionheader_ID = b.postransactionheader_ID &#xd;
+inner join POSTransaction_detail c on a.postransactionheader_ID = c.postransactionheader_ID&#xd;
+inner join POSTransactionPayment d ON a.postransactionheader_ID = d.postransactionheader_ID&#xd;
+inner join POSTransactionDiscountSAP e on a.postransactionheader_ID = d.postransactionheader_ID&#xd;
+where d.postransactionpayment_starttime>'2026-05-25 09:08:33.017'&#xd;
+ORDER BY a.postransactionheader_EndTime DESC</query>
+   <secureUserAccount>true</secureUserAccount>
+   <sheetName></sheetName>
+   <user>SA</user>
+   <usingGlobalDBSetting>false</usingGlobalDBSetting>
+</DataFileEntity>

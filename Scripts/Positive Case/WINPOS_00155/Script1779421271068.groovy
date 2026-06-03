@@ -125,7 +125,7 @@ Windows.click(findWindowsObject('Transaksi Kasir/btn_tutupCekDiskon'))
 Windows.delay(2)
 
 'Melakukan pembayaran'
-Windows.click(findWindowsObject('ss/btn_enter'))
+Windows.click(findWindowsObject('Transaksi Kasir/btn_enter (1)'))
 
 Windows.delay(3)
 
@@ -136,7 +136,7 @@ Windows.click(findWindowsObject('Transaksi Kasir/btn_enter'))
 Windows.delay(2)
 
 'Ambil total belanja'
-String total = Windows.getText(findWindowsObject('ss/txt_totalYangHarusDibayar'))
+String total = Windows.getText(findWindowsObject('Transaksi Kasir/txt_totalYangHarusDibayar'))
 
 // hapus koma
 int nilai = Integer.parseInt(total.replace(',', ''))
@@ -169,12 +169,12 @@ Windows.takeScreenshot()
 
 Windows.delay(1)
 
-String pembayaranBerhasil = Windows.getText(findWindowsObject('ss/txt_pembayaranBerhasil'))
+String pembayaranBerhasil = Windows.getText(findWindowsObject('Transaksi Kasir/txt_pembayaranBerhasil'))
 
 if (pembayaranBerhasil.length() > 0) {
     KeywordUtil.markPassed('✅ PAYMENT BERHASIL')
 
-    Windows.click(findWindowsObject('ss/btn_tutup'))
+    Windows.click(findWindowsObject('Transaksi Kasir/btn_tutup'))
 
     Windows.delay(2)
 

@@ -12,47 +12,16 @@
    <rerunImmediately>true</rerunImmediately>
    <testSuiteGuid>7d224f8b-1313-422f-8759-dde08a8fb563</testSuiteGuid>
    <testCaseLink>
-      <guid>1ac74608-6c06-4eb3-a0b4-d96693d536fa</guid>
+      <guid>75f75a74-8162-49d6-8864-e6809be1c7ce</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Positive Case/WINPOS_00204</testCaseId>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Positive Case/WINPOS_00108</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>fc887485-169d-4ceb-9ecd-982cbc366517</variableId>
-      </variableLink>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>ad1ada4c-95ed-4fd1-a63c-77491f24d688</variableId>
-      </variableLink>
    </testCaseLink>
    <testCaseLink>
-      <guid>0e9446ea-62f8-43af-8f6a-36a6e9d6a4f5</guid>
+      <guid>ad9f15da-7764-49af-90ff-2b491157a93f</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Positive Case/WINPOS_00205</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>5798563d-3244-485a-a618-9eac9649e8c1</variableId>
-      </variableLink>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>e88e721e-1755-4539-8767-1f95c7a5fe57</variableId>
-      </variableLink>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>a2917d00-aedb-47ea-961c-cec231b4acdc</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Positive Case/WINPOS_00146</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
       <variableLink>
@@ -69,16 +38,28 @@
       </variableLink>
    </testCaseLink>
    <testCaseLink>
-      <guid>f5e634f3-0e0c-4c0c-a4d2-69c39924d4a6</guid>
+      <guid>d841c942-c7f6-43b9-9dea-34c12ab9dc6f</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Positive Case/WINPOS_00107</testCaseId>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Positive Case/WINPOS_00156</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>95c322eb-b7dd-4084-83df-e151ebde9829</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>b4c903f2-7b64-4e8a-8a6f-8c1553c4e504</variableId>
+      </variableLink>
    </testCaseLink>
    <testCaseLink>
-      <guid>65d091b9-e678-4a3b-97f1-b63144424e27</guid>
+      <guid>4f810649-87ff-4bfd-bcf8-7ef206dedc3f</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Positive Case/WINPOS_00159</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
       <variableLink>
@@ -95,22 +76,190 @@
       </variableLink>
    </testCaseLink>
    <testCaseLink>
-      <guid>804000de-944f-4c74-9ba3-70dc2b17c83c</guid>
+      <guid>818c5513-6214-4bfe-803d-389f16659e99</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Positive Case/WINPOS_00156</testCaseId>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Positive Case/WINPOS_00133</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
       <variableLink>
          <testDataLinkId></testDataLinkId>
          <type>DEFAULT</type>
          <value></value>
-         <variableId>95c322eb-b7dd-4084-83df-e151ebde9829</variableId>
+         <variableId>87c4ca30-8544-43c1-acb3-89558791e5a7</variableId>
       </variableLink>
       <variableLink>
          <testDataLinkId></testDataLinkId>
          <type>DEFAULT</type>
          <value></value>
-         <variableId>b4c903f2-7b64-4e8a-8a6f-8c1553c4e504</variableId>
+         <variableId>a5610b73-3d67-4030-919f-a26994aa8f15</variableId>
       </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>c1c8eddb-edab-41fc-a4ee-3a7d67a35860</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Positive Case/WINPOS_00204</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>fc887485-169d-4ceb-9ecd-982cbc366517</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>ad1ada4c-95ed-4fd1-a63c-77491f24d688</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>2c20753e-7ea7-45a4-8a55-fa3c299ea473</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Positive Case/WINPOS_00138</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>8946b21a-a6fa-45ce-b9cb-9b4aae041655</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>3bdcd88e-c959-4333-8010-3c774b8c4d11</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>c5a6150f-56ef-4d1f-b816-b0e508f67fd3</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Positive Case/WINPOS_00136</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>47c56439-81d3-49cc-861b-744df54557d6</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>319df352-1964-457c-b5cb-539564129358</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>f73c0831-4394-46cd-8e9b-cc9a9d770076</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Positive Case/WINPOS_00134</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>6bd22191-5b7b-4588-ad11-89c0995f8d6d</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>06f686c5-d07e-4ec4-97f4-fdfeb37bbdf1</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>c0b4a29a-ccc5-49b6-8c28-3d5ae60f6c3d</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Positive Case/WINPOS_00144</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>5402a069-9443-4a1b-9bd6-42b330c1ee5b</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Positive Case/WINPOS_00155</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>1dd9946d-799f-41ba-a058-ea8693618761</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Positive Case/WINPOS_00205</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>293bbcaa-c8b9-42ba-9058-07de78dcc722</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>50cb5232-3e5d-49b9-a675-05bff2266ebd</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>05cefda8-2c68-4837-bda9-6080e7a4e11a</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Positive Case/WINPOS_00135</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>3d2b165f-98cc-4fa4-acaa-19fbeef0a984</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>0605b319-c38e-4882-b14c-afa1623a131b</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>8e96bf95-cc44-464c-99b6-720145bc86d4</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Positive Case/WINPOS_00142</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>3c22950a-b69d-46af-a4ba-eb9f5a4a9f06</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Positive Case/WINPOS_00160</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>7ecaede3-0eb7-40c8-b6b5-e5f815164173</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Positive Case/WINPOS_00130</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>304159bd-a3a8-4b36-83eb-bf8164e8ad55</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>2e33c71a-1313-4da5-971f-c37eb26187a8</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>4f51c8ff-4d66-47e2-8681-4f86ea723f20</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Positive Case/WINPOS_00143</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
 </TestSuiteEntity>
