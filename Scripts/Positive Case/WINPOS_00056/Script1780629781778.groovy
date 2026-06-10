@@ -55,6 +55,29 @@ Windows.delay(3)
 
 Windows.takeScreenshot()
 
+'Melakukan void'
+
+Windows.sendKeys(findWindowsObject('Transaksi Kasir/txt_PLU'), plu)
+
+Windows.sendKeys(findWindowsObject('Transaksi Kasir/txt_PLU'), Keys.chord(Keys.ENTER))
+
+Windows.delay(3)
+
+Windows.click(findWindowsObject('Transaksi Kasir/btn_voidActive'))
+
+Windows.delay(3)
+
+Windows.setText(findWindowsObject('Transaksi Kasir/txt_PLU'), qtymin)
+
+Windows.takeScreenshot()
+
+Windows.sendKeys(findWindowsObject('Transaksi Kasir/txt_PLU'), Keys.chord(Keys.ENTER))
+
+Windows.delay(3)
+
+Windows.takeScreenshot()
+
+
 'Melakukan pembayaran'
 Windows.click(findWindowsObject('Transaksi Kasir/btn_enter (1)'))
 
@@ -168,77 +191,17 @@ if (pembayaranBerhasil.length() > 0) {
 
     Windows.takeScreenshot()
 
-    'Refund'
-    Windows.click(findWindowsObject('refund/btn_refund'))
-
-    Windows.delay(3)
-
-    Windows.takeScreenshot()
-
-    Windows.click(findWindowsObject('refund/txt_refundKasir'))
-
-    Windows.delay(3)
-
-    Windows.setText(findWindowsObject('refund/txt_refundKasir'), GlobalVariable.userId)
-	
-	Windows.setText(findWindowsObject('refund/txt_refundKasir'), GlobalVariable.userId)
-
-    Windows.click(findWindowsObject('refund/txt_refundStation'))
-
-    Windows.setText(findWindowsObject('refund/txt_refundStation'), refundStation)
-
-    Windows.click(findWindowsObject('refund/txt_refundNoTrans'))
-
-    Windows.setText(findWindowsObject('refund/txt_refundNoTrans'), idTrx)
-
-    Windows.delay(3)
-
-    Windows.takeScreenshot()
-
-    Windows.delay(2)
-
-    Windows.click(findWindowsObject('refund/btn_cariRefundTrx'))
-
-    Windows.delay(3)
-
-    Windows.takeScreenshot()
-
-    Windows.click(findWindowsObject('Transaksi Kasir/txt_PLU'))
-
-    Windows.sendKeys(findWindowsObject('Transaksi Kasir/txt_PLU'), plu)
-
-    Windows.sendKeys(findWindowsObject('Transaksi Kasir/txt_PLU'), Keys.chord(Keys.ENTER))
-
-    Windows.delay(3)
-
-    Windows.click(findWindowsObject('Transaksi Kasir/txt_PLU'))
-
-    Windows.setText(findWindowsObject('Transaksi Kasir/txt_PLU'), qty)
-
-    Windows.sendKeys(findWindowsObject('Transaksi Kasir/txt_PLU'), Keys.chord(Keys.ENTER))
-
-    Windows.delay(3)
-	
-	Windows.sendKeys(findWindowsObject('Transaksi Kasir/txt_PLU'), Keys.chord(Keys.ENTER))
-
-	Windows.delay(3)
-	
-    Windows.takeScreenshot()
-	
-	String idRefund = Windows.getText(findWindowsObject('refund/lbl_messageRefundId'))
-	
-	String idRefundNumber = idRefund.replaceAll("\\D+", "")
-	
-	Windows.comment('Refund ID: ' + idRefundNumber)
-	
-	Windows.delay(3)
-	
-	Windows.sendKeys(findWindowsObject('refund/btn_tutupRfundSelesai'), Keys.chord(Keys.ENTER))
-	
-	Windows.delay(3)
-	
-
 }
+
+// ======================================================
+// LOGOUT
+// ======================================================
+
+	Windows.click(findWindowsObject('Transaksi Kasir/Menu Utama'))
+
+	Windows.callTestCase(findTestCase('Additional Cases/Logout'), [:], FailureHandling.STOP_ON_FAILURE)
+
+
 
 def cleanNumber(String value) {
     return value.replaceAll('[^0-9-]', '').toLong()

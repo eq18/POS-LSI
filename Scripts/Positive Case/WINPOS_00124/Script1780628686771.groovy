@@ -177,11 +177,11 @@ if (pembayaranBerhasil.length() > 0) {
 
     Windows.click(findWindowsObject('refund/txt_refundKasir'))
 
-    Windows.delay(3)
+    //Windows.delay(3)
 
     Windows.setText(findWindowsObject('refund/txt_refundKasir'), GlobalVariable.userId)
-	
-	Windows.setText(findWindowsObject('refund/txt_refundKasir'), GlobalVariable.userId)
+
+    Windows.setText(findWindowsObject('refund/txt_refundKasir'), GlobalVariable.userId)
 
     Windows.click(findWindowsObject('refund/txt_refundStation'))
 
@@ -191,7 +191,7 @@ if (pembayaranBerhasil.length() > 0) {
 
     Windows.setText(findWindowsObject('refund/txt_refundNoTrans'), idTrx)
 
-    Windows.delay(3)
+    //Windows.delay(3)
 
     Windows.takeScreenshot()
 
@@ -199,7 +199,7 @@ if (pembayaranBerhasil.length() > 0) {
 
     Windows.click(findWindowsObject('refund/btn_cariRefundTrx'))
 
-    Windows.delay(3)
+    //Windows.delay(3)
 
     Windows.takeScreenshot()
 
@@ -209,7 +209,7 @@ if (pembayaranBerhasil.length() > 0) {
 
     Windows.sendKeys(findWindowsObject('Transaksi Kasir/txt_PLU'), Keys.chord(Keys.ENTER))
 
-    Windows.delay(3)
+    //Windows.delay(3)
 
     Windows.click(findWindowsObject('Transaksi Kasir/txt_PLU'))
 
@@ -217,28 +217,69 @@ if (pembayaranBerhasil.length() > 0) {
 
     Windows.sendKeys(findWindowsObject('Transaksi Kasir/txt_PLU'), Keys.chord(Keys.ENTER))
 
+    //Windows.delay(3)
+
+    Windows.sendKeys(findWindowsObject('Transaksi Kasir/txt_PLU'), Keys.chord(Keys.ENTER))
+
     Windows.delay(3)
-	
-	Windows.sendKeys(findWindowsObject('Transaksi Kasir/txt_PLU'), Keys.chord(Keys.ENTER))
 
-	Windows.delay(3)
-	
+    //Windows.takeScreenshot()
+
+    String idRefund = Windows.getText(findWindowsObject('refund/lbl_messageRefundId'))
+
+    String idRefundNumber = idRefund.replaceAll('\\D+', '')
+
+    Windows.comment('Refund ID: ' + idRefundNumber)
+
+    Windows.delay(3)
+
+    Windows.sendKeys(findWindowsObject('refund/btn_tutupRfundSelesai'), Keys.chord(Keys.ENTER))
+
+    Windows.delay(3)
+
+    'Refund Tunai'
+    Windows.click(findWindowsObject('refund/btn_nextPanel'))
+
+   // Windows.delay(3)
+
     Windows.takeScreenshot()
-	
-	String idRefund = Windows.getText(findWindowsObject('refund/lbl_messageRefundId'))
-	
-	String idRefundNumber = idRefund.replaceAll("\\D+", "")
-	
-	Windows.comment('Refund ID: ' + idRefundNumber)
-	
-	Windows.delay(3)
-	
-	Windows.sendKeys(findWindowsObject('refund/btn_tutupRfundSelesai'), Keys.chord(Keys.ENTER))
-	
-	Windows.delay(3)
-	
 
+    Windows.click(findWindowsObject('refund/btn_refundTunai'))
+
+    //Windows.delay(3)
+
+    Windows.takeScreenshot()
+
+    Windows.click(findWindowsObject('refund/txt_refundTunaiId'))
+
+    Windows.setText(findWindowsObject('refund/txt_refundTunaiId'), idRefundNumber)
+
+    Windows.sendKeys(findWindowsObject('refund/txt_refundTunaiId'), Keys.chord(Keys.ENTER))
+
+    Windows.delay(3)
+
+    Windows.takeScreenshot()
+
+    Windows.sendKeys(findWindowsObject('refund/txt_refundTunaiId'), Keys.chord(Keys.ENTER))
+
+    Windows.delay(3)
+
+    Windows.takeScreenshot()
+
+	//String refundSukses = Windows.getText(findWindowsObject('refund/lbl_refundSuksesCaption'))
+	
+	//assert refundSukses.contains('Berhasil')
+
+    Windows.click(findWindowsObject('refund/btn_tutupRefundTunai'))
+	
+	Windows.click(findWindowsObject('Transaksi Kasir/Menu Utama'))
 }
+
+// ======================================================
+// LOGOUT
+// ======================================================
+//Windows.callTestCase(findTestCase('Additional Cases/Logout'), [:], FailureHandling.STOP_ON_FAILURE)
+
 
 def cleanNumber(String value) {
     return value.replaceAll('[^0-9-]', '').toLong()

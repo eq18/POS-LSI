@@ -20,7 +20,7 @@ import org.openqa.selenium.Keys as Keys
 Windows.startApplicationWithTitle('C:\\Users\\kasir\\AppData\\Local\\Apps\\2.0\\3KTNRRKW.CXY\\19N75WPK.ZJN\\lsi...tion_0000000000000000_0002.0001_c2e529750677f20f\\LSI.POS.CashRegister.exe', 
     'Transaksi Kasir (PT Lion Super Indo v.2.1.1.74)')
 
-Windows.click(findWindowsObject('Object Repository/refund/Button_tutup'))
+Windows.click(findWindowsObject('Object Repository/refund/btn_tutup'))
 
 Windows.setText(findWindowsObject('Object Repository/refund/Button'), '0')
 
@@ -72,7 +72,7 @@ Windows.click(findWindowsObject('Object Repository/refund/Pane(1)'))
 
 Windows.setText(findWindowsObject('Object Repository/refund/Button(6)'), '000')
 
-Windows.click(findWindowsObject('Object Repository/refund/Button_tutup'))
+Windows.click(findWindowsObject('Object Repository/refund/btn_tutup'))
 
 Windows.click(findWindowsObject('Object Repository/refund/lbl_penjualan'))
 

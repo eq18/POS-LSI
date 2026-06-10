@@ -237,7 +237,56 @@ if (pembayaranBerhasil.length() > 0) {
 	
 	Windows.delay(3)
 	
-
+	'Input PLU'
+	Windows.click(findWindowsObject('Transaksi Kasir/txt_PLU'))
+	
+	Windows.sendKeys(findWindowsObject('Transaksi Kasir/txt_PLU'), plu)
+	
+	Windows.sendKeys(findWindowsObject('Transaksi Kasir/txt_PLU'), Keys.chord(Keys.ENTER))
+	
+	Windows.delay(5)
+	
+	Windows.setText(findWindowsObject('Transaksi Kasir/txt_PLU'), qty)
+	
+	Windows.sendKeys(findWindowsObject('Transaksi Kasir/txt_PLU'), Keys.chord(Keys.ENTER))
+	
+	Windows.click(findWindowsObject('Transaksi Kasir/btn_enter'))
+	
+	Windows.delay(3)
+	
+	'Melakukan pembayaran'
+	
+	Windows.delay(3)
+	
+	Windows.takeScreenshot()
+	
+	Windows.click(findWindowsObject('refund/btn_pRefund'))
+	
+	Windows.click(findWindowsObject('refund/txt_pRefundId'))
+	
+	Windows.setText(findWindowsObject('refund/txt_pRefundId'), idRefundNumber)
+	
+	Windows.sendKeys(findWindowsObject('refund/txt_pRefundId'), Keys.chord(Keys.ENTER))
+	
+	Windows.delay(3)
+	
+	Windows.takeScreenshot()
+	
+	Windows.click(findWindowsObject('Transaksi Kasir/btn_enter'))
+	
+	Windows.delay(3)
+	
+	Windows.takeScreenshot()
+	
+	Windows.click(findWindowsObject('Transaksi Kasir/btn_enter'))
+	
+	Windows.delay(3)
+	
+	Windows.takeScreenshot()
+	
+	Windows.click(findWindowsObject('Transaksi Kasir/btn_enter'))
+	
+	Windows.click(findWindowsObject('Transaksi Kasir/btn_close1'), FailureHandling.OPTIONAL)
 }
 
 def cleanNumber(String value) {
